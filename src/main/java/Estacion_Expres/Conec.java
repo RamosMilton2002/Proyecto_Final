@@ -16,33 +16,34 @@ import java.sql.SQLException;
  * @author MSI-THIN
  */
 public class Conec {
+
     Connection co;
 
     private String url = "jdbc:mysql://localhost:3306/sistema_parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String usuario = "root";
     private String clave = "2002";
 
-    public ResultSet EjecutaSQL(String Sql) throws ClassNotFoundException{
+    public ResultSet EjecutaSQL(String Sql) throws ClassNotFoundException {
 
-    
-        ResultSet resultado=null;
-            try {
-              Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection Co = DriverManager.getConnection(url, usuario, clave);
-        PreparedStatement pst = Co.prepareStatement(Sql);
-        resultado = pst.executeQuery();
-        return resultado;
-
-    }catch(SQLException e){
-              return resultado;
-    }
-            }
-    
-    public void EjecutaSQLIUD(String Sql) throws ClassNotFoundException{
-        
+        ResultSet resultado = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection Co= DriverManager.getConnection(url, usuario, clave);
+            Connection Co = DriverManager.getConnection(url, usuario, clave);
+            PreparedStatement pst = Co.prepareStatement(Sql);
+            resultado = pst.executeQuery();
+            return resultado;
+
+        } catch (SQLException e) {
+            System.out.println("'''''''" + e);
+            return resultado;
+        }
+    }
+
+    public void EjecutaSQLIUD(String Sql) throws ClassNotFoundException {
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection Co = DriverManager.getConnection(url, usuario, clave);
             PreparedStatement pst = Co.prepareStatement(Sql);
             pst.execute();
         } catch (Exception e) {
@@ -64,5 +65,5 @@ public class Conec {
     CallableStatement prepareCall(String sql) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }
