@@ -21,7 +21,7 @@ public class MenuAdmin extends javax.swing.JFrame {
      */
     public MenuAdmin() {
         initComponents();
-        
+
     }
 
     /**
@@ -102,25 +102,21 @@ public class MenuAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-             
-            String Consulta = "drop procedure Validacion_Credenciales;";
-            String Consulta2 = "CREATE PROCEDURE Validacion_Credenciales(in clave varchar(20))\n" +
-                    "BEGIN\n" +
-                    "    if clave = \"" + txt_claveUsuario.getText() + "\" then\n" +
-                    "    select 1;\n" +
-                    "    elseif clave = \"" +txt_claveadmin.getText() + "\" then\n" +
-                    "    select 2;\n" +
-                    "    else \n" +
-                    "    select 0;\n" +
-                    "    end if;\n" +
-                    "END";
-                    
-            Conec cn = new Conec();
-
+        Conec cn = new Conec();
+        String Consulta = "drop procedure Validacion_Credenciales;";
+        String Consulta2 = "CREATE PROCEDURE Validacion_Credenciales(in clave varchar(20))\n"
+                + "BEGIN\n"
+                + "    if clave = \"" + txt_claveUsuario.getText() + "\" then\n"
+                + "    select 1;\n"
+                + "    elseif clave = \"" + txt_claveadmin.getText() + "\" then\n"
+                + "    select 2;\n"
+                + "    else \n"
+                + "    select 0;\n"
+                + "    end if;\n"
+                + "END";
         try {
-            
-         cn.EjecutaInstruccion(Consulta);
-         cn.EjecutaInstruccion(Consulta2);
+            cn.EjecutaInstruccion(Consulta);
+            cn.EjecutaInstruccion(Consulta2);
             System.out.println(Consulta);
 
         } catch (ClassNotFoundException ex) {
@@ -128,9 +124,9 @@ public class MenuAdmin extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(MenuAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
+
 //            ResultSet res2 = cn.EjecutaSQL(Consulta2);
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
