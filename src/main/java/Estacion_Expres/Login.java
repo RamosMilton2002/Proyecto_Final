@@ -100,12 +100,11 @@ public class Login extends javax.swing.JFrame {
 
         try {
             ResultSet res = cn.EjecutaSQL(consulta);
-
             if (res.next()) {
                 if ( pass.isBlank()) {
                     JOptionPane.showMessageDialog(null, "Tiene campos en blanco", "Error", JOptionPane.ERROR_MESSAGE);
 
-                } else {
+                } else if (res.getInt(1) == 1) {
                     Menu ad = new Menu();
                     ad.setVisible(true);
                     this.dispose();
@@ -117,6 +116,8 @@ public class Login extends javax.swing.JFrame {
 //                    String registro = "Usuario: " + user + ", Hora de ingreso: " + horaIngreso;
 //                    guardarRegistro(registro);
 
+                } else if (res.getInt(1) == 2){
+                    System.out.println("hola");
                 }
 
             } else {
