@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -18,9 +19,9 @@ import java.sql.SQLException;
 public class Conec {
     Connection co;
 
-    private String url = "jdbc:mysql://localhost:3306/sistema_parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL";
+    private String url = "jdbc:mysql://localhost:3306/parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String usuario = "root";
-    private String clave = "2002";
+    private String clave = "";
 
     public ResultSet EjecutaSQL(String Sql) throws ClassNotFoundException{
 
@@ -65,4 +66,19 @@ public class Conec {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
+    public void EjecutaInstruccion(String sql) throws ClassNotFoundException, SQLException {
+        Connection con = null;
+        Statement stmt = null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(url, usuario, clave);
+            stmt = con.createStatement();
+            stmt.executeUpdate(sql);
+            System.out.println("Instrucción ejecutada correctamente.");
+        } catch (Exception a){
+            
+        } 
+    }
+
 }
