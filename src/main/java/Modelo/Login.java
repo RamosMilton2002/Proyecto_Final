@@ -8,6 +8,31 @@ package Modelo;
  *
  * @author MSI-THIN
  */
-public class Login {
+public class Login  {
+    private String usuario;
+    private String clave;
+    
+    public Login(){
+    
+}
+    
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+    
+    
     
 }

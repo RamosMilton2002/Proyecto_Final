@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Controlador;
+package Estacion_Expres;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class Conexion {
       public static void main(String[] args) throws ClassNotFoundException {
         Conec conn = new Conec();
-        ResultSet resultado = conn.EjecutaSQL("call sistema_parqueadero.LOGIN();");
+        ResultSet resultado = conn.EjecutaSQL("SELECT * FROM sistema_parqueadero.login;");
         try{
             while(resultado.next()){
                 System.out.println(resultado.getString(1)+"  "+resultado.getString(2));
