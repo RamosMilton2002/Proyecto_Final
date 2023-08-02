@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,7 +36,7 @@ public class Registros extends javax.swing.JFrame {
         txt_matricula = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btn_buscar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_RegistrarHora = new javax.swing.JButton();
         lbl_Modelo = new javax.swing.JLabel();
         lbl_Marca = new javax.swing.JLabel();
         lbl_Color = new javax.swing.JLabel();
@@ -52,38 +53,43 @@ public class Registros extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Registrar");
+        btn_RegistrarHora.setText("Registrar");
+        btn_RegistrarHora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RegistrarHoraActionPerformed(evt);
+            }
+        });
 
-        lbl_Modelo.setText("jLabel2");
+        lbl_Modelo.setText("Modelo: ");
 
-        lbl_Marca.setText("jLabel3");
+        lbl_Marca.setText("Marca: ");
 
-        lbl_Color.setText("jLabel4");
+        lbl_Color.setText("Color: ");
 
-        lbl_Tipo.setText("jLabel5");
+        lbl_Tipo.setText("Tipo: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(33, 33, 33))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_Marca)
-                    .addComponent(lbl_Color)
-                    .addComponent(lbl_Tipo)
+                    .addComponent(btn_RegistrarHora)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbl_Modelo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_matricula, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addComponent(btn_buscar)))
+                        .addComponent(jLabel1)
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_Marca, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lbl_Tipo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_Color, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lbl_Modelo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_matricula, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(32, 32, 32)
+                                .addComponent(btn_buscar)))))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -102,9 +108,9 @@ public class Registros extends javax.swing.JFrame {
                 .addComponent(lbl_Color)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_Tipo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(79, 79, 79))
+                .addGap(18, 18, 18)
+                .addComponent(btn_RegistrarHora)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,22 +119,28 @@ public class Registros extends javax.swing.JFrame {
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         String Consulta = "Select * from vehiculos where veh_matricula = " + txt_matricula.getText();
         Conec cn = new Conec();
-        
+
         try {
             ResultSet res = cn.EjecutaSQL(Consulta);
-            if (res.next()){
-                lbl_Marca.setText(res.getString("Veh_Marca"));
-                lbl_Modelo.setText(res.getString("Veh_Modelo"));
-                lbl_Color.setText(res.getString("Veh_Color"));
-                lbl_Tipo.setText(res.getString("Veh_Tipo"));
+            if (res.next()) {
+                lbl_Marca.setText("Marca: " + res.getString("Veh_Marca"));
+                lbl_Modelo.setText("Modelo: " + res.getString("Veh_Modelo"));
+                lbl_Color.setText("Color: " + res.getString("Veh_Color"));
+                lbl_Tipo.setText("Tipo: " + res.getString("Veh_Tipo"));
+            } else {
+                JOptionPane.showConfirmDialog(rootPane, "Hola");
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_btn_buscarActionPerformed
+
+    private void btn_RegistrarHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarHoraActionPerformed
+        
+    }//GEN-LAST:event_btn_RegistrarHoraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,8 +178,8 @@ public class Registros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_RegistrarHora;
     private javax.swing.JButton btn_buscar;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Color;
     private javax.swing.JLabel lbl_Marca;
