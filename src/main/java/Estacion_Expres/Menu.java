@@ -4,6 +4,8 @@
  */
 package Estacion_Expres;
 
+import com.mycompany.proyecto_final.MenuAdmin;
+
 /**
  *
  * @author MSI-THIN
@@ -31,6 +33,7 @@ public class Menu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        btnMenuAdmin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,6 +50,13 @@ public class Menu extends javax.swing.JFrame {
 
         jButton3.setText("SALIR");
 
+        btnMenuAdmin.setText("jButton4");
+        btnMenuAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuAdminActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -59,6 +69,10 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(180, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnMenuAdmin)
+                .addGap(48, 48, 48))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,7 +83,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(88, 88, 88)
                 .addComponent(jButton2)
-                .addGap(64, 64, 64)
+                .addGap(15, 15, 15)
+                .addComponent(btnMenuAdmin)
+                .addGap(26, 26, 26)
                 .addComponent(jButton3)
                 .addGap(127, 127, 127))
         );
@@ -100,6 +116,13 @@ public class Menu extends javax.swing.JFrame {
         reg.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnMenuAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuAdminActionPerformed
+        // TODO add your handling code here:
+        
+        MenuAdmin m=new MenuAdmin();
+        m.show();
+    }//GEN-LAST:event_btnMenuAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,6 +160,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnMenuAdmin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
