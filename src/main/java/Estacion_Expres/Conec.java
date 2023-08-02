@@ -34,7 +34,7 @@ public class Conec {
             return resultado;
 
         } catch (SQLException e) {
-            System.out.println("'''''''" + e);
+            
             return resultado;
         }
     }

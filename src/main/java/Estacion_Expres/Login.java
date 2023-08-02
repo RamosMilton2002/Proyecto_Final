@@ -111,8 +111,10 @@ public class Login extends javax.swing.JFrame {
         try {
             ResultSet res = cn.EjecutaSQL(consulta);
                 if (res.next()){
+                    System.out.println(res);
                 if ( pass.isBlank()) {
                     JOptionPane.showMessageDialog(null, "Tiene campos en blanco", "Error", JOptionPane.ERROR_MESSAGE);
+                    
 
                 } else if (res.getInt(1) == 1) {
                     Menu ad = new Menu();
