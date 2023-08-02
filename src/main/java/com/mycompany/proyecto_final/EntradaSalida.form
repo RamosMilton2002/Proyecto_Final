@@ -24,10 +24,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btn_RegistrarHora" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -46,8 +45,19 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="txt_observaciones" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="lbl_hora" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbl_Fecha" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_RegistrarHora" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="50" max="32767" attributes="0"/>
+              <EmptySpace pref="32" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,14 +73,21 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lbl_Marca" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="lbl_Modelo" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_Modelo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_Fecha" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lbl_Color" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lbl_Tipo" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btn_RegistrarHora" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="105" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btn_RegistrarHora" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_hora" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_observaciones" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="32" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -117,6 +134,18 @@
     <Component class="javax.swing.JLabel" name="lbl_Tipo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tipo: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_hora">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hora"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_observaciones">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_Fecha">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha"/>
       </Properties>
     </Component>
   </SubComponents>

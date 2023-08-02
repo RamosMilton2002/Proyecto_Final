@@ -4,7 +4,6 @@
  */
 package com.mycompany.proyecto_final;
 
-
 import Estacion_Expres.Conec;
 import Estacion_Expres.Conexion;
 import java.sql.ResultSet;
@@ -19,13 +18,15 @@ import java.util.logging.Logger;
 public class Disponibilidad extends javax.swing.JFrame {
 
     public void Disponibles() {
-        String Consulta = "Select * from estacionamiento";
+
         Conec cn = new Conec();
         try {
-            ResultSet res = cn.EjecutaSQL(Consulta);
-            System.out.println(res);
-            while (res.next()){
-                
+            for (int i = 1; i < 5; i++) {
+                String Consulta = "Select * from estacionamiento where est_id =" + i;
+                ResultSet res = cn.EjecutaSQL(Consulta);
+                while (res.next()){
+                System.out.println(res.getInt("est_Disponibilidad"));
+                }
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Disponibilidad.class.getName()).log(Level.SEVERE, null, ex);

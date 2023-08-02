@@ -4,9 +4,8 @@
  */
 package com.mycompany.proyecto_final;
 
-
 import Estacion_Expres.Conec;
-import Estacion_Expres.Conexion;
+import Estacion_Expres.Registros;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -17,13 +16,25 @@ import javax.swing.JOptionPane;
  *
  * @author USUARIO
  */
-public class Registros extends javax.swing.JFrame {
+public class EntradaSalida extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Registros
-     */
-    public Registros() {
+    public void Hora(){
+        String Consulta = "select date(now()) as fecha, time(now()) as hora";
+        Conec cn = new Conec();
+        
+        try {
+            ResultSet res = cn.EjecutaSQL(Consulta);
+            while (res.next()){
+                lbl_Fecha.setText(res.getString(1));
+                lbl_hora.setText(res.getString(2));                
+            }
+        } catch (ClassNotFoundException | SQLException  ex) {
+            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public EntradaSalida() {
         initComponents();
+        Hora();
     }
 
     /**
@@ -43,6 +54,9 @@ public class Registros extends javax.swing.JFrame {
         lbl_Marca = new javax.swing.JLabel();
         lbl_Color = new javax.swing.JLabel();
         lbl_Tipo = new javax.swing.JLabel();
+        lbl_hora = new javax.swing.JLabel();
+        txt_observaciones = new javax.swing.JTextField();
+        lbl_Fecha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,15 +84,18 @@ public class Registros extends javax.swing.JFrame {
 
         lbl_Tipo.setText("Tipo: ");
 
+        lbl_hora.setText("Hora");
+
+        lbl_Fecha.setText("Fecha");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_RegistrarHora)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
                         .addComponent(jLabel1)
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,8 +108,17 @@ public class Registros extends javax.swing.JFrame {
                                     .addComponent(lbl_Modelo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txt_matricula, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(32, 32, 32)
-                                .addComponent(btn_buscar)))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                                .addComponent(btn_buscar))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(txt_observaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(lbl_hora)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_Fecha)
+                            .addComponent(btn_RegistrarHora))))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,14 +131,19 @@ public class Registros extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_Marca)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_Modelo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_Modelo)
+                    .addComponent(lbl_Fecha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_Color)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_Tipo)
                 .addGap(18, 18, 18)
-                .addComponent(btn_RegistrarHora)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_RegistrarHora)
+                    .addComponent(lbl_hora)
+                    .addComponent(txt_observaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
@@ -130,18 +161,37 @@ public class Registros extends javax.swing.JFrame {
                 lbl_Color.setText("Color: " + res.getString("Veh_Color"));
                 lbl_Tipo.setText("Tipo: " + res.getString("Veh_Tipo"));
             } else {
-                JOptionPane.showConfirmDialog(rootPane, "Hola");
+                int opcion = JOptionPane.showConfirmDialog(null, "Desea Registrar un nuevo vehiculo?", "Registrar", JOptionPane.YES_NO_OPTION);
+                if (opcion == JOptionPane.YES_OPTION) {
+                    Registros reg = new Registros();
+                    reg.setVisible(true);
+                } else if (opcion == JOptionPane.NO_OPTION) {
+                    System.out.println("El usuario eligió 'No'");
+                }
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_btn_buscarActionPerformed
 
     private void btn_RegistrarHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarHoraActionPerformed
-        
+        String Consulta = "call parqueadero.Registros('" + txt_matricula.getText() + "', " + 1 + ", '" + txt_observaciones.getText() + "')";
+        Conec cn = new Conec();
+
+        try {
+            ResultSet res = cn.EjecutaSQL(Consulta);
+            while (res.next()){
+                if (res.getInt(1)== 1){
+                    JOptionPane.showMessageDialog(rootPane, "Salida Registrada exitosamente");
+                } else if (res.getInt(1)== 2){
+                    JOptionPane.showMessageDialog(rootPane, "Entrada Registrada exitosamente");
+                }
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_RegistrarHoraActionPerformed
 
     /**
@@ -161,20 +211,21 @@ public class Registros extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EntradaSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EntradaSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EntradaSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EntradaSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Registros().setVisible(true);
+                new EntradaSalida().setVisible(true);
             }
         });
     }
@@ -184,9 +235,12 @@ public class Registros extends javax.swing.JFrame {
     private javax.swing.JButton btn_buscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Color;
+    private javax.swing.JLabel lbl_Fecha;
     private javax.swing.JLabel lbl_Marca;
     private javax.swing.JLabel lbl_Modelo;
     private javax.swing.JLabel lbl_Tipo;
+    private javax.swing.JLabel lbl_hora;
     private javax.swing.JTextField txt_matricula;
+    private javax.swing.JTextField txt_observaciones;
     // End of variables declaration//GEN-END:variables
 }
