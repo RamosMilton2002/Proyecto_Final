@@ -17,25 +17,26 @@ import javax.swing.JOptionPane;
  * @author USUARIO
  */
 public class EntradaSalida extends javax.swing.JFrame {
-    
-    public void Hora(){
+
+    public void Hora() {
         String Consulta = "select date(now()), time(now())";
         Conec cn = new Conec();
-        
+
         try {
             ResultSet res = cn.EjecutaSQL(Consulta);
-            while (res.next()){
+            while (res.next()) {
                 lbl_Fecha.setText(res.getString(1));
-                lbl_hora.setText(res.getString(2));                
+                lbl_hora.setText(res.getString(2));
             }
-        } catch (ClassNotFoundException | SQLException  ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public EntradaSalida() {
         initComponents();
         Hora();
-        
+
     }
 
     /**
@@ -58,8 +59,7 @@ public class EntradaSalida extends javax.swing.JFrame {
         lbl_hora = new javax.swing.JLabel();
         txt_observaciones = new javax.swing.JTextField();
         lbl_Fecha = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btn_Salir = new javax.swing.JButton();
 
         jLabel1.setText("Matricula");
 
@@ -89,6 +89,13 @@ public class EntradaSalida extends javax.swing.JFrame {
 
         lbl_Fecha.setText("Fecha");
 
+        btn_Salir.setText("jButton1");
+        btn_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,9 +103,15 @@ public class EntradaSalida extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel1)
-                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel1)
+                                .addGap(33, 33, 33))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btn_Salir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Marca, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -130,11 +143,14 @@ public class EntradaSalida extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(btn_buscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl_Marca)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Modelo)
-                    .addComponent(lbl_Fecha))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_Marca)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl_Modelo)
+                            .addComponent(lbl_Fecha)))
+                    .addComponent(btn_Salir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_Color)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -178,23 +194,32 @@ public class EntradaSalida extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_buscarActionPerformed
 
     private void btn_RegistrarHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarHoraActionPerformed
-        String Consulta = "call parqueadero.Registros('" + txt_matricula.getText() + "', " + 1 + ", '" + txt_observaciones.getText() + "')";
+        Disponibilidad dn = new Disponibilidad();
+        int puesto = Disponibilidad.puesto;
+        String Consulta = "call parqueadero.Registros('" + txt_matricula.getText() + "', " + puesto + ", '" + txt_observaciones.getText() + "')";
         Conec cn = new Conec();
         System.out.println(Consulta);
 
         try {
             ResultSet res = cn.EjecutaSQL(Consulta);
-            while (res.next()){
-                if (res.getInt(1)== 1){
+            while (res.next()) {
+                dn.ActualizarToggles();
+                if (res.getInt(1) == 1) {
                     JOptionPane.showMessageDialog(rootPane, "Salida Registrada exitosamente");
-                } else if (res.getInt(1)== 2){
+                } else if (res.getInt(1) == 2) {
                     JOptionPane.showMessageDialog(rootPane, "Entrada Registrada exitosamente");
                 }
+                dn.ActualizarToggles();
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_RegistrarHoraActionPerformed
+
+    private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
+        Disponibilidad dn = new Disponibilidad();
+        dn.setVisible(true);
+    }//GEN-LAST:event_btn_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,6 +259,7 @@ public class EntradaSalida extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_RegistrarHora;
+    private javax.swing.JButton btn_Salir;
     private javax.swing.JButton btn_buscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Color;

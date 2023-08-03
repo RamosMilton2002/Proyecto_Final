@@ -17,6 +17,8 @@ import javax.swing.JToggleButton;
  */
 public class Disponibilidad extends javax.swing.JFrame {
 
+    public static int puesto;
+    
     public void ActualizarToggles(){
         ObtenerValoresToggles(tbtn_Puesto_1, 1);
         ObtenerValoresToggles(tbtn_Puesto_2, 2);
@@ -89,32 +91,102 @@ public class Disponibilidad extends javax.swing.JFrame {
         });
 
         tbtn_Puesto_2.setText("Disponible");
+        tbtn_Puesto_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_2ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_3.setText("Disponible");
+        tbtn_Puesto_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_3ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_4.setText("Disponible");
+        tbtn_Puesto_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_4ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_5.setText("Disponible");
+        tbtn_Puesto_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_5ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_6.setText("Disponible");
+        tbtn_Puesto_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_6ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_7.setText("Disponible");
+        tbtn_Puesto_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_7ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_8.setText("Disponible");
+        tbtn_Puesto_8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_8ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_9.setText("Disponible");
+        tbtn_Puesto_9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_9ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_10.setText("Disponible");
+        tbtn_Puesto_10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_10ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_11.setText("Disponible");
+        tbtn_Puesto_11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_11ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_12.setText("Disponible");
+        tbtn_Puesto_12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_12ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_13.setText("Disponible");
+        tbtn_Puesto_13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_13ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_14.setText("Disponible");
+        tbtn_Puesto_14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_14ActionPerformed(evt);
+            }
+        });
 
         tbtn_Puesto_15.setText("Disponible");
+        tbtn_Puesto_15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_15ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,10 +258,94 @@ public class Disponibilidad extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tbtn_Puesto_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_1ActionPerformed
+        puesto = 1;
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
-        ActualizarToggles();
     }//GEN-LAST:event_tbtn_Puesto_1ActionPerformed
+
+    private void tbtn_Puesto_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_2ActionPerformed
+        puesto = 2;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_2ActionPerformed
+
+    private void tbtn_Puesto_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_3ActionPerformed
+        puesto = 3;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_3ActionPerformed
+
+    private void tbtn_Puesto_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_4ActionPerformed
+        puesto = 4;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_4ActionPerformed
+
+    private void tbtn_Puesto_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_5ActionPerformed
+        puesto = 5;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_5ActionPerformed
+
+    private void tbtn_Puesto_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_6ActionPerformed
+        puesto = 6;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_6ActionPerformed
+
+    private void tbtn_Puesto_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_7ActionPerformed
+        puesto = 7;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_7ActionPerformed
+
+    private void tbtn_Puesto_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_8ActionPerformed
+        puesto = 8;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_8ActionPerformed
+
+    private void tbtn_Puesto_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_9ActionPerformed
+        puesto = 9;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_9ActionPerformed
+
+    private void tbtn_Puesto_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_10ActionPerformed
+        puesto = 10;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_10ActionPerformed
+
+    private void tbtn_Puesto_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_11ActionPerformed
+        puesto = 11;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_11ActionPerformed
+
+    private void tbtn_Puesto_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_12ActionPerformed
+        puesto = 12;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_12ActionPerformed
+
+    private void tbtn_Puesto_13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_13ActionPerformed
+        puesto = 13;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_13ActionPerformed
+
+    private void tbtn_Puesto_14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_14ActionPerformed
+        puesto = 14;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_14ActionPerformed
+
+    private void tbtn_Puesto_15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_15ActionPerformed
+        puesto = 15;
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_15ActionPerformed
 
     /**
      * @param args the command line arguments
