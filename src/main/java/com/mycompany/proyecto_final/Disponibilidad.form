@@ -23,99 +23,157 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="lbl_Carro1" min="-2" pref="70" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="lbl_Carro2" min="-2" pref="70" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="lbl_Carro3" min="-2" pref="70" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="lbl_Carro4" min="-2" pref="70" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="lbl_Carro5" min="-2" pref="70" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="lbl_Carro6" min="-2" pref="70" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="lbl_Carro7" min="-2" pref="70" max="-2" attributes="0"/>
-              <EmptySpace pref="53" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="tbtn_Puesto_1" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_2" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_3" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_4" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_5" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_6" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="tbtn_Puesto_7" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_8" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_9" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_10" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_11" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_12" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="tbtn_Puesto_13" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_14" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_15" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbl_Carro1" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="lbl_Carro2" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="lbl_Carro3" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="lbl_Carro4" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="lbl_Carro5" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="lbl_Carro6" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="lbl_Carro7" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_1" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_2" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_3" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_4" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_5" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_6" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="394" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="tbtn_Puesto_7" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_8" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_9" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_10" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_11" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_12" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="tbtn_Puesto_13" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_14" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_15" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="143" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lbl_Carro1">
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Disponible"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="lbl_Carro1.setVisible(false);"/>
-      </AuxValues>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tbtn_Puesto_1ActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl_Carro2">
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Disponible"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="lbl_Carro1.setVisible(false);"/>
-      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl_Carro3">
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Disponible"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="lbl_Carro1.setVisible(false);"/>
-      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl_Carro4">
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Disponible"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="lbl_Carro1.setVisible(false);"/>
-      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl_Carro5">
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Disponible"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="lbl_Carro1.setVisible(false);"/>
-      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl_Carro6">
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_6">
       <Properties>
         <Property name="text" type="java.lang.String" value="Disponible"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="lbl_Carro1.setVisible(false);"/>
-      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl_Carro7">
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_7">
       <Properties>
         <Property name="text" type="java.lang.String" value="Disponible"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="lbl_Carro1.setVisible(false);"/>
-      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disponible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disponible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disponible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_11">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disponible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_12">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disponible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_13">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disponible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_14">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disponible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_15">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disponible"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -5,11 +5,11 @@
 package com.mycompany.proyecto_final;
 
 import Estacion_Expres.Conec;
-import Estacion_Expres.Conexion;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -17,27 +17,41 @@ import java.util.logging.Logger;
  */
 public class Disponibilidad extends javax.swing.JFrame {
 
-    public void Disponibles() {
-
-        Conec cn = new Conec();
+    public void ActualizarToggles(){
+        ObtenerValoresToggles(tbtn_Puesto_1, 1);
+        ObtenerValoresToggles(tbtn_Puesto_2, 2);
+        ObtenerValoresToggles(tbtn_Puesto_3, 3);
+        ObtenerValoresToggles(tbtn_Puesto_4, 4);
+        ObtenerValoresToggles(tbtn_Puesto_5, 5);
+        ObtenerValoresToggles(tbtn_Puesto_6, 6);
+        ObtenerValoresToggles(tbtn_Puesto_7, 7);
+        ObtenerValoresToggles(tbtn_Puesto_8, 8);
+        ObtenerValoresToggles(tbtn_Puesto_9, 9);
+        ObtenerValoresToggles(tbtn_Puesto_10, 10);
+        ObtenerValoresToggles(tbtn_Puesto_11, 11);
+        ObtenerValoresToggles(tbtn_Puesto_12, 12);
+        ObtenerValoresToggles(tbtn_Puesto_13, 13);
+        ObtenerValoresToggles(tbtn_Puesto_14, 14);
+        ObtenerValoresToggles(tbtn_Puesto_15, 15);
+    }
+    
+    public void ObtenerValoresToggles(JToggleButton toggleButton, int i) {
         try {
-            for (int i = 1; i < 5; i++) {
-                String Consulta = "Select * from estacionamiento where est_id =" + i;
-                ResultSet res = cn.EjecutaSQL(Consulta);
-                while (res.next()){
-                System.out.println(res.getInt("est_Disponibilidad"));
-                }
+            String consulta = "SELECT Est_Disponibilidad FROM estacionamiento WHERE Est_id = " + i;
+            Conec cn = new Conec();
+            ResultSet res = cn.EjecutaSQL(consulta);
+            if (res.next()) {
+                boolean estado = res.getBoolean(1);
+                toggleButton.setSelected(estado);
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Disponibilidad.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Disponibilidad.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public Disponibilidad() {
         initComponents();
-        Disponibles();
+        ActualizarToggles();
     }
 
     /**
@@ -49,76 +63,133 @@ public class Disponibilidad extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_Carro1 = new javax.swing.JLabel();
-        lbl_Carro2 = new javax.swing.JLabel();
-        lbl_Carro3 = new javax.swing.JLabel();
-        lbl_Carro4 = new javax.swing.JLabel();
-        lbl_Carro5 = new javax.swing.JLabel();
-        lbl_Carro6 = new javax.swing.JLabel();
-        lbl_Carro7 = new javax.swing.JLabel();
+        tbtn_Puesto_1 = new javax.swing.JToggleButton();
+        tbtn_Puesto_2 = new javax.swing.JToggleButton();
+        tbtn_Puesto_3 = new javax.swing.JToggleButton();
+        tbtn_Puesto_4 = new javax.swing.JToggleButton();
+        tbtn_Puesto_5 = new javax.swing.JToggleButton();
+        tbtn_Puesto_6 = new javax.swing.JToggleButton();
+        tbtn_Puesto_7 = new javax.swing.JToggleButton();
+        tbtn_Puesto_8 = new javax.swing.JToggleButton();
+        tbtn_Puesto_9 = new javax.swing.JToggleButton();
+        tbtn_Puesto_10 = new javax.swing.JToggleButton();
+        tbtn_Puesto_11 = new javax.swing.JToggleButton();
+        tbtn_Puesto_12 = new javax.swing.JToggleButton();
+        tbtn_Puesto_13 = new javax.swing.JToggleButton();
+        tbtn_Puesto_14 = new javax.swing.JToggleButton();
+        tbtn_Puesto_15 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbl_Carro1.setText("Disponible");
+        tbtn_Puesto_1.setText("Disponible");
+        tbtn_Puesto_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_1ActionPerformed(evt);
+            }
+        });
 
-        lbl_Carro2.setText("Disponible");
+        tbtn_Puesto_2.setText("Disponible");
 
-        lbl_Carro3.setText("Disponible");
+        tbtn_Puesto_3.setText("Disponible");
 
-        lbl_Carro4.setText("Disponible");
+        tbtn_Puesto_4.setText("Disponible");
 
-        lbl_Carro5.setText("Disponible");
+        tbtn_Puesto_5.setText("Disponible");
 
-        lbl_Carro6.setText("Disponible");
+        tbtn_Puesto_6.setText("Disponible");
 
-        lbl_Carro7.setText("Disponible");
+        tbtn_Puesto_7.setText("Disponible");
+
+        tbtn_Puesto_8.setText("Disponible");
+
+        tbtn_Puesto_9.setText("Disponible");
+
+        tbtn_Puesto_10.setText("Disponible");
+
+        tbtn_Puesto_11.setText("Disponible");
+
+        tbtn_Puesto_12.setText("Disponible");
+
+        tbtn_Puesto_13.setText("Disponible");
+
+        tbtn_Puesto_14.setText("Disponible");
+
+        tbtn_Puesto_15.setText("Disponible");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(lbl_Carro1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_Carro2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_Carro3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_Carro4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_Carro5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_Carro6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_Carro7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tbtn_Puesto_1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tbtn_Puesto_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Carro1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Carro2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Carro3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Carro4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Carro5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Carro6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Carro7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(394, Short.MAX_VALUE))
+                    .addComponent(tbtn_Puesto_1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tbtn_Puesto_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
-
-        lbl_Carro1.setVisible(false);
-        lbl_Carro1.setVisible(false);
-        lbl_Carro1.setVisible(false);
-        lbl_Carro1.setVisible(false);
-        lbl_Carro1.setVisible(false);
-        lbl_Carro1.setVisible(false);
-        lbl_Carro1.setVisible(false);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tbtn_Puesto_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_1ActionPerformed
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+        ActualizarToggles();
+    }//GEN-LAST:event_tbtn_Puesto_1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,12 +227,22 @@ public class Disponibilidad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lbl_Carro1;
-    private javax.swing.JLabel lbl_Carro2;
-    private javax.swing.JLabel lbl_Carro3;
-    private javax.swing.JLabel lbl_Carro4;
-    private javax.swing.JLabel lbl_Carro5;
-    private javax.swing.JLabel lbl_Carro6;
-    private javax.swing.JLabel lbl_Carro7;
+    private javax.swing.JToggleButton tbtn_Puesto_1;
+    private javax.swing.JToggleButton tbtn_Puesto_10;
+    private javax.swing.JToggleButton tbtn_Puesto_11;
+    private javax.swing.JToggleButton tbtn_Puesto_12;
+    private javax.swing.JToggleButton tbtn_Puesto_13;
+    private javax.swing.JToggleButton tbtn_Puesto_14;
+    private javax.swing.JToggleButton tbtn_Puesto_15;
+    private javax.swing.JToggleButton tbtn_Puesto_2;
+    private javax.swing.JToggleButton tbtn_Puesto_3;
+    private javax.swing.JToggleButton tbtn_Puesto_4;
+    private javax.swing.JToggleButton tbtn_Puesto_5;
+    private javax.swing.JToggleButton tbtn_Puesto_6;
+    private javax.swing.JToggleButton tbtn_Puesto_7;
+    private javax.swing.JToggleButton tbtn_Puesto_8;
+    private javax.swing.JToggleButton tbtn_Puesto_9;
     // End of variables declaration//GEN-END:variables
+
+    
 }

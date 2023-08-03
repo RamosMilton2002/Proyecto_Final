@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
  * @author USUARIO
  */
 public class EntradaSalida extends javax.swing.JFrame {
-
+    
     public void Hora(){
-        String Consulta = "select date(now()) as fecha, time(now()) as hora";
+        String Consulta = "select date(now()), time(now())";
         Conec cn = new Conec();
         
         try {
@@ -35,6 +35,7 @@ public class EntradaSalida extends javax.swing.JFrame {
     public EntradaSalida() {
         initComponents();
         Hora();
+        
     }
 
     /**
@@ -179,6 +180,7 @@ public class EntradaSalida extends javax.swing.JFrame {
     private void btn_RegistrarHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarHoraActionPerformed
         String Consulta = "call parqueadero.Registros('" + txt_matricula.getText() + "', " + 1 + ", '" + txt_observaciones.getText() + "')";
         Conec cn = new Conec();
+        System.out.println(Consulta);
 
         try {
             ResultSet res = cn.EjecutaSQL(Consulta);
