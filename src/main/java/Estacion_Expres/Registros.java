@@ -132,6 +132,11 @@ public class Registros extends javax.swing.JFrame {
                 "CEDULA", "NOMBRE", "APELLIDO", "TELEFONO", "DIRECCION", "CORREO"
             }
         ));
+        tblCli.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCliMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblCli);
 
         lblCor.setText("CORREO: ");
@@ -179,29 +184,29 @@ public class Registros extends javax.swing.JFrame {
                         .addComponent(LblAp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap(449, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtDir, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblDi, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 40, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtApe, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCed, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCed, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton1))
+                                .addComponent(lblCed, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(122, 122, 122)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btEl, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblNom, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblTel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtCor, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCor, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDir, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDi, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 40, Short.MAX_VALUE))))
+                                    .addComponent(lblCor, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btEl, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,6 +271,11 @@ public class Registros extends javax.swing.JFrame {
                 "MATRICULA", "CEDULA CLIENTE", "MARCA", "MODELO", "COLOR", "TIPO"
             }
         ));
+        TblaVe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblaVeMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(TblaVe);
 
         txtMatr.addActionListener(new java.awt.event.ActionListener() {
@@ -330,16 +340,6 @@ public class Registros extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ComboxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,14 +353,24 @@ public class Registros extends javax.swing.JFrame {
                                     .addComponent(txtMatr))
                                 .addGap(25, 25, 25)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCedCli, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CmboxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                            .addComponent(ComboxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ComboxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,11 +401,14 @@ public class Registros extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboxModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComboxColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistr)
-                    .addComponent(jButton4))
-                .addGap(43, 43, 43)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRegistr))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jButton4)))
+                .addGap(35, 35, 35)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
@@ -434,20 +447,38 @@ public class Registros extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Conec c1 = new Conec();
         int cedula = Integer.parseInt(txtCed.getText());
         String nombre = txtNom.getText();
         String apellido = txtApe.getText();
         String telefono = txtTel.getText();
         String direccion = txtDir.getText();
         String correo = txtCor.getText();
-
-        String sql = ("call sistema_parqueadero.InsertarPers('" + cedula + "','" + nombre + "','" + apellido + "','" + telefono + "','" + direccion + "','" + correo + "')");
+        String sql2 ="SELECT * FROM personas WHERE Per_Cedula ="+ cedula;
+        try {
+            ResultSet re = c1.EjecutaSQL(sql2);
+            if(re.next()){
+                int selectedRow = tblCli.getSelectedRow();
+                if(selectedRow == -1){
+                JOptionPane.showMessageDialog(this, "Por favor, seleccione un registro para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);   
+                }else{
+                    
+                }
+                String sql3 =("call sistema_parqueadero.MODIFICARPER('" + cedula + "','" + nombre + "','" + apellido + "','" + telefono + "','" + direccion + "','" + correo + "')");
+                c1.EjecutaSQL(sql3);
+            }else{
+                 String sql = ("call sistema_parqueadero.InsertarPers('" + cedula + "','" + nombre + "','" + apellido + "','" + telefono + "','" + direccion + "','" + correo + "')");
 
         System.out.println("´´´´" + sql);
         try {
-            Conec c1 = new Conec();
             c1.EjecutaSQLIUD(sql);
         } catch (ClassNotFoundException e) {
+        }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
         }
         mostrarTabla();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -528,25 +559,43 @@ public class Registros extends javax.swing.JFrame {
 
     private void btnRegistrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrActionPerformed
         // TODO add your handling code here:
+        Conec c1 = new Conec();
         String matricula = txtMatr.getText();
         int cedulacli = Integer.parseInt(txtCedCli.getText());
         String marca = CmboxMarca.getSelectedItem().toString();
         String modelo = ComboxModelo.getSelectedItem().toString();
         String color = ComboxColor.getSelectedItem().toString();
         String tipo = ComboxTipo.getSelectedItem().toString();
-
+         String sql2 ="SELECT * FROM vehiculo WHERE Veh_Matricula ="+ matricula;
+        try {
+            ResultSet re = c1.EjecutaSQL(sql2);
+            if(re.next()){
+                int selectedRow = TblaVe.getSelectedRow();
+                if(selectedRow == -1){
+                JOptionPane.showMessageDialog(this, "Por favor, seleccione un registro para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);   
+                }else{
+                    
+                }
+                }
         String sql = ("call sistema_parqueadero.INSERTARVE('" + matricula + "','" + cedulacli + "','" + marca + "','"
                 + modelo + "','" + color + "','" + tipo + "')");
 
         System.out.println("´´´´" + sql);
         try {
-            Conec c1 = new Conec();
             c1.EjecutaSQLIUD(sql);
         } catch (ClassNotFoundException e) {
         }
+        
         mostrarTablaVe();
     }//GEN-LAST:event_btnRegistrActionPerformed
 
+        catch (ClassNotFoundException ex) {
+            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         int selectedRow = TblaVe.getSelectedRow();
@@ -605,6 +654,26 @@ public class Registros extends javax.swing.JFrame {
             Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_ComboxTipoActionPerformed
+
+    private void tblCliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCliMouseClicked
+        // TODO add your handling code here:
+        txtCed.setText(tblCli.getValueAt(tblCli.getSelectedRow(),0).toString());
+        txtNom.setText(tblCli.getValueAt(tblCli.getSelectedRow(),1).toString());
+        txtApe.setText(tblCli.getValueAt(tblCli.getSelectedRow(),2).toString());
+        txtTel.setText(tblCli.getValueAt(tblCli.getSelectedRow(),3).toString());
+        txtDir.setText(tblCli.getValueAt(tblCli.getSelectedRow(),4).toString());
+        txtCor.setText(tblCli.getValueAt(tblCli.getSelectedRow(),5).toString());
+    }//GEN-LAST:event_tblCliMouseClicked
+
+    private void TblaVeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblaVeMouseClicked
+        // TODO add your handling code here:
+        txtMatr.setText(TblaVe.getValueAt(TblaVe.getSelectedRow(),0).toString());
+        txtCedCli.setText(TblaVe.getValueAt(TblaVe.getSelectedRow(),1).toString());
+        ComboxTipo.setSelectedItem(TblaVe.getValueAt(TblaVe.getSelectedRow(),5).toString());
+        CmboxMarca.setSelectedItem(TblaVe.getValueAt(TblaVe.getSelectedRow(),2).toString());
+        ComboxModelo.setSelectedItem(TblaVe.getValueAt(TblaVe.getSelectedRow(),3).toString());
+        ComboxColor.setSelectedItem(TblaVe.getValueAt(TblaVe.getSelectedRow(),4).toString());
+    }//GEN-LAST:event_TblaVeMouseClicked
 
     public void mostrarTabla() {
         String sql = ("call sistema_parqueadero.MostrarCli();");

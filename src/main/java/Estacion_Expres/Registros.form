@@ -62,36 +62,36 @@
                           <Component id="LblAp" max="32767" attributes="0"/>
                           <EmptySpace pref="449" max="32767" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane1" min="-2" pref="468" max="-2" attributes="0"/>
+                                  <Component id="txtDir" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                  <Component id="lblDi" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtApe" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                               <Component id="txtCed" min="-2" pref="142" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblCed" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                                      <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="lblCed" min="-2" pref="70" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btEl" min="-2" pref="108" max="-2" attributes="0"/>
                                       <Component id="lblNom" min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="txtNom" min="-2" pref="142" max="-2" attributes="0"/>
                                       <Component id="lblTel" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
                                       <Component id="txtTel" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                       <Component id="txtCor" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                       <Component id="lblCor" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
+                                      <Component id="btEl" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" min="-2" pref="468" max="-2" attributes="0"/>
-                              <Component id="txtDir" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                              <Component id="lblDi" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -227,6 +227,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblCliMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -285,19 +288,6 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel14" min="-2" pref="43" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jScrollPane2" alignment="0" min="-2" pref="468" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ComboxTipo" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" pref="70" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -316,17 +306,30 @@
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton4" min="-2" pref="102" max="-2" attributes="0"/>
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel13" min="-2" pref="98" max="-2" attributes="0"/>
                               <Component id="jLabel11" min="-2" pref="63" max="-2" attributes="0"/>
                               <Component id="txtCedCli" min="-2" pref="149" max="-2" attributes="0"/>
                               <Component id="CmboxMarca" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="ComboxColor" min="-2" pref="149" max="-2" attributes="0"/>
+                              <Component id="jButton4" min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel14" min="-2" pref="43" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jScrollPane2" alignment="0" min="-2" pref="468" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="ComboxTipo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -365,12 +368,17 @@
                       <Component id="ComboxModelo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="ComboxColor" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnRegistr" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnRegistr" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="187" max="-2" attributes="0"/>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
@@ -470,6 +478,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TblaVeMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
