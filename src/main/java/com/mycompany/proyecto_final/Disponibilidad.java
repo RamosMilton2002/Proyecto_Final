@@ -18,8 +18,23 @@ import javax.swing.JToggleButton;
 public class Disponibilidad extends javax.swing.JFrame {
 
     public static int puesto;
-    
-    public void ActualizarToggles(){
+    public static String matricula;
+    public int disponibilidad;
+
+    public void VerDisponibilidad() {
+        String consulta = "call parqueadero.BUSCARDisponibles('" + 1111 + "')";
+        Conec cn = new Conec();
+        try {
+            ResultSet res = cn.EjecutaSQL(consulta);
+            if (res.next()) {
+                disponibilidad = res.getInt(3);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void ActualizarToggles() {
         ObtenerValoresToggles(tbtn_Puesto_1, 1);
         ObtenerValoresToggles(tbtn_Puesto_2, 2);
         ObtenerValoresToggles(tbtn_Puesto_3, 3);
@@ -36,15 +51,30 @@ public class Disponibilidad extends javax.swing.JFrame {
         ObtenerValoresToggles(tbtn_Puesto_14, 14);
         ObtenerValoresToggles(tbtn_Puesto_15, 15);
     }
-    
+
     public void ObtenerValoresToggles(JToggleButton toggleButton, int i) {
         try {
             String consulta = "SELECT Est_Disponibilidad FROM estacionamiento WHERE Est_id = " + i;
             Conec cn = new Conec();
             ResultSet res = cn.EjecutaSQL(consulta);
             if (res.next()) {
-                boolean estado = res.getBoolean(1);
-                toggleButton.setSelected(estado);
+                toggleButton.setSelected(res.getBoolean(1));
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Disponibilidad.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void ObtenerMatricula() {
+        String consulta = "call parqueadero.BUSCARREG(" + puesto + ")";
+        Conec cn = new Conec();
+        try {
+            ResultSet res = cn.EjecutaSQL(consulta);
+            if (res.next()) {
+                matricula = res.getString(2);
+                System.out.println(matricula);
+            } else {
+                matricula = null;
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Disponibilidad.class.getName()).log(Level.SEVERE, null, ex);
@@ -54,6 +84,7 @@ public class Disponibilidad extends javax.swing.JFrame {
     public Disponibilidad() {
         initComponents();
         ActualizarToggles();
+        ObtenerMatricula();
     }
 
     /**
@@ -204,27 +235,28 @@ public class Disponibilidad extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(tbtn_Puesto_4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tbtn_Puesto_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tbtn_Puesto_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -236,22 +268,23 @@ public class Disponibilidad extends javax.swing.JFrame {
                     .addComponent(tbtn_Puesto_2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbtn_Puesto_3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbtn_Puesto_4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tbtn_Puesto_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbtn_Puesto_8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbtn_Puesto_9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(143, Short.MAX_VALUE))
+                    .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -259,90 +292,135 @@ public class Disponibilidad extends javax.swing.JFrame {
 
     private void tbtn_Puesto_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_1ActionPerformed
         puesto = 1;
+        if (tbtn_Puesto_1.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_1ActionPerformed
 
     private void tbtn_Puesto_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_2ActionPerformed
         puesto = 2;
+        if (tbtn_Puesto_2.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_2ActionPerformed
 
     private void tbtn_Puesto_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_3ActionPerformed
         puesto = 3;
+        if (tbtn_Puesto_3.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_3ActionPerformed
 
     private void tbtn_Puesto_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_4ActionPerformed
         puesto = 4;
+        if (tbtn_Puesto_4.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_4ActionPerformed
 
     private void tbtn_Puesto_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_5ActionPerformed
         puesto = 5;
+        if (tbtn_Puesto_5.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_5ActionPerformed
 
     private void tbtn_Puesto_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_6ActionPerformed
         puesto = 6;
+        if (tbtn_Puesto_6.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_6ActionPerformed
 
     private void tbtn_Puesto_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_7ActionPerformed
         puesto = 7;
+        if (tbtn_Puesto_7.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_7ActionPerformed
 
     private void tbtn_Puesto_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_8ActionPerformed
         puesto = 8;
+        if (tbtn_Puesto_8.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_8ActionPerformed
 
     private void tbtn_Puesto_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_9ActionPerformed
         puesto = 9;
+        if (tbtn_Puesto_9.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_9ActionPerformed
 
     private void tbtn_Puesto_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_10ActionPerformed
         puesto = 10;
+        if (tbtn_Puesto_10.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_10ActionPerformed
 
     private void tbtn_Puesto_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_11ActionPerformed
         puesto = 11;
+        if (tbtn_Puesto_11.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_11ActionPerformed
 
     private void tbtn_Puesto_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_12ActionPerformed
         puesto = 12;
+        if (tbtn_Puesto_11.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_12ActionPerformed
 
     private void tbtn_Puesto_13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_13ActionPerformed
         puesto = 13;
+        if (tbtn_Puesto_13.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_13ActionPerformed
 
     private void tbtn_Puesto_14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_14ActionPerformed
         puesto = 14;
+        if (tbtn_Puesto_14.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_14ActionPerformed
 
     private void tbtn_Puesto_15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_15ActionPerformed
         puesto = 15;
+        if (tbtn_Puesto_15.isSelected()) {
+            ObtenerMatricula();
+        }
         EntradaSalida es = new EntradaSalida();
         es.setVisible(true);
     }//GEN-LAST:event_tbtn_Puesto_15ActionPerformed
@@ -400,5 +478,4 @@ public class Disponibilidad extends javax.swing.JFrame {
     private javax.swing.JToggleButton tbtn_Puesto_9;
     // End of variables declaration//GEN-END:variables
 
-    
 }

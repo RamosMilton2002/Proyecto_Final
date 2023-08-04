@@ -18,6 +18,22 @@ import javax.swing.JOptionPane;
  */
 public class EntradaSalida extends javax.swing.JFrame {
 
+    public int disponibilidad;
+
+    public void VerDisponibilidad() {
+        Disponibilidad dn = new Disponibilidad();
+        String consulta = "call parqueadero.BUSCARDisponibles('" + dn.matricula + "')";
+        Conec cn = new Conec();
+        try {
+            ResultSet res = cn.EjecutaSQL(consulta);
+            if (res.next()) {
+                disponibilidad = res.getInt(3);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void Hora() {
         String Consulta = "select date(now()), time(now())";
         Conec cn = new Conec();
@@ -33,10 +49,45 @@ public class EntradaSalida extends javax.swing.JFrame {
         }
     }
 
+    public void BuscarVehiculo() {
+        String Consulta = "call parqueadero.BUSCARVEHI('" + txt_matricula.getText() + "')";
+        Conec cn = new Conec();
+        try {
+            ResultSet res = cn.EjecutaSQL(Consulta);
+            if (res.next()) {
+                lbl_Marca.setText("Marca: " + res.getString("Veh_Marca"));
+                lbl_Modelo.setText("Modelo: " + res.getString("Veh_Modelo"));
+                lbl_Color.setText("Color: " + res.getString("Veh_Color"));
+                lbl_Tipo.setText("Tipo: " + res.getString("Veh_Tipo"));
+            } else {
+                int opcion = JOptionPane.showConfirmDialog(null, "Desea Registrar un nuevo vehiculo?", "Registrar", JOptionPane.YES_NO_OPTION);
+                if (opcion == JOptionPane.YES_OPTION) {
+                    Registros reg = new Registros();
+                    reg.setVisible(true);
+                } else if (opcion == JOptionPane.NO_OPTION) {
+                    System.out.println("El usuario eligió 'No'");
+                }
+            }
+            txt_observaciones.setVisible(true);
+            btn_RegistrarHora.setVisible(true);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    
+    
     public EntradaSalida() {
         initComponents();
         Hora();
-
+        txt_observaciones.setVisible(false);
+        btn_RegistrarHora.setVisible(false);
+        Disponibilidad dn = new Disponibilidad();
+        txt_matricula.setText(dn.matricula);
+        if (!txt_matricula.getText().isEmpty()) {
+            BuscarVehiculo();
+            txt_matricula.setEditable(false);
+        }
     }
 
     /**
@@ -59,7 +110,6 @@ public class EntradaSalida extends javax.swing.JFrame {
         lbl_hora = new javax.swing.JLabel();
         txt_observaciones = new javax.swing.JTextField();
         lbl_Fecha = new javax.swing.JLabel();
-        btn_Salir = new javax.swing.JButton();
 
         jLabel1.setText("Matricula");
 
@@ -89,49 +139,38 @@ public class EntradaSalida extends javax.swing.JFrame {
 
         lbl_Fecha.setText("Fecha");
 
-        btn_Salir.setText("jButton1");
-        btn_Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_SalirActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel1)
-                                .addGap(33, 33, 33))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btn_Salir)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Marca, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lbl_Tipo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_Color, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(lbl_Modelo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txt_matricula, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(32, 32, 32)
-                                .addComponent(btn_buscar))))
+                                .addComponent(btn_buscar))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(lbl_Tipo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lbl_Color, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
+                                    .addComponent(lbl_Marca, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_Fecha)
+                                    .addComponent(lbl_hora))
+                                .addGap(26, 26, 26))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
                         .addComponent(txt_observaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(lbl_hora)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Fecha)
-                            .addComponent(btn_RegistrarHora))))
+                        .addGap(49, 49, 49)
+                        .addComponent(btn_RegistrarHora)))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -142,55 +181,40 @@ public class EntradaSalida extends javax.swing.JFrame {
                     .addComponent(txt_matricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(btn_buscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_Marca)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbl_Marca))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lbl_Fecha)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_Modelo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_Color)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_Tipo)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl_Modelo)
-                            .addComponent(lbl_Fecha)))
-                    .addComponent(btn_Salir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_Color)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_Tipo)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_RegistrarHora)
-                    .addComponent(lbl_hora)
-                    .addComponent(txt_observaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                            .addComponent(btn_RegistrarHora)
+                            .addComponent(txt_observaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(lbl_hora)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        String Consulta = "Select * from vehiculos where veh_matricula = " + txt_matricula.getText();
-        Conec cn = new Conec();
-
-        try {
-            ResultSet res = cn.EjecutaSQL(Consulta);
-            if (res.next()) {
-                lbl_Marca.setText("Marca: " + res.getString("Veh_Marca"));
-                lbl_Modelo.setText("Modelo: " + res.getString("Veh_Modelo"));
-                lbl_Color.setText("Color: " + res.getString("Veh_Color"));
-                lbl_Tipo.setText("Tipo: " + res.getString("Veh_Tipo"));
-            } else {
-                int opcion = JOptionPane.showConfirmDialog(null, "Desea Registrar un nuevo vehiculo?", "Registrar", JOptionPane.YES_NO_OPTION);
-                if (opcion == JOptionPane.YES_OPTION) {
-                    Registros reg = new Registros();
-                    reg.setVisible(true);
-                } else if (opcion == JOptionPane.NO_OPTION) {
-                    System.out.println("El usuario eligió 'No'");
-                }
-            }
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+        BuscarVehiculo();
+        VerDisponibilidad();
+        if (disponibilidad == 1){
+            JOptionPane.showMessageDialog(rootPane, "El vehiculo ya esta en un puesto");
         }
-
     }//GEN-LAST:event_btn_buscarActionPerformed
 
     private void btn_RegistrarHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarHoraActionPerformed
@@ -198,8 +222,6 @@ public class EntradaSalida extends javax.swing.JFrame {
         int puesto = Disponibilidad.puesto;
         String Consulta = "call parqueadero.Registros('" + txt_matricula.getText() + "', " + puesto + ", '" + txt_observaciones.getText() + "')";
         Conec cn = new Conec();
-        System.out.println(Consulta);
-
         try {
             ResultSet res = cn.EjecutaSQL(Consulta);
             while (res.next()) {
@@ -209,17 +231,12 @@ public class EntradaSalida extends javax.swing.JFrame {
                 } else if (res.getInt(1) == 2) {
                     JOptionPane.showMessageDialog(rootPane, "Entrada Registrada exitosamente");
                 }
-                dn.ActualizarToggles();
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.setVisible(false);
     }//GEN-LAST:event_btn_RegistrarHoraActionPerformed
-
-    private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
-        Disponibilidad dn = new Disponibilidad();
-        dn.setVisible(true);
-    }//GEN-LAST:event_btn_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,7 +276,6 @@ public class EntradaSalida extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_RegistrarHora;
-    private javax.swing.JButton btn_Salir;
     private javax.swing.JButton btn_buscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Color;

@@ -36,28 +36,30 @@
                       <Component id="tbtn_Puesto_4" min="-2" pref="100" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="tbtn_Puesto_5" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tbtn_Puesto_6" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="tbtn_Puesto_7" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tbtn_Puesto_8" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tbtn_Puesto_9" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tbtn_Puesto_10" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tbtn_Puesto_11" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tbtn_Puesto_12" min="-2" pref="100" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="tbtn_Puesto_13" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tbtn_Puesto_14" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tbtn_Puesto_15" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="tbtn_Puesto_6" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="tbtn_Puesto_7" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="tbtn_Puesto_8" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="tbtn_Puesto_9" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="tbtn_Puesto_10" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="tbtn_Puesto_11" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="tbtn_Puesto_12" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="tbtn_Puesto_13" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="tbtn_Puesto_14" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="tbtn_Puesto_15" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -74,7 +76,6 @@
                   <Component id="tbtn_Puesto_3" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                   <Component id="tbtn_Puesto_4" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                   <Component id="tbtn_Puesto_5" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="tbtn_Puesto_6" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -82,16 +83,19 @@
                   <Component id="tbtn_Puesto_8" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                   <Component id="tbtn_Puesto_9" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                   <Component id="tbtn_Puesto_10" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="tbtn_Puesto_11" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="tbtn_Puesto_12" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="tbtn_Puesto_6" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="tbtn_Puesto_13" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                   <Component id="tbtn_Puesto_14" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                   <Component id="tbtn_Puesto_15" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                      <Component id="tbtn_Puesto_11" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_12" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="143" max="32767" attributes="0"/>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
