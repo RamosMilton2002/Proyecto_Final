@@ -55,26 +55,57 @@ public class MenuAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lbl_ClaveUsu = new javax.swing.JLabel();
         txt_claveUsuario = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lbl_ClaveAdmin = new javax.swing.JLabel();
         txt_claveadmin = new javax.swing.JTextField();
+        lbl_Tarifa = new javax.swing.JLabel();
         txt_tarifa = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        lbl_Tipo = new javax.swing.JLabel();
+        txt_Tipo = new javax.swing.JTextField();
+        lbl_Marca = new javax.swing.JLabel();
+        txt_Marca = new javax.swing.JTextField();
+        lbl_Modelo = new javax.swing.JLabel();
+        txt_Modelo = new javax.swing.JTextField();
+        lbl_Color = new javax.swing.JLabel();
+        txt_Color = new javax.swing.JTextField();
+        btn_Cambiar = new javax.swing.JButton();
+        Chbox_ClaveUsu = new javax.swing.JCheckBox();
+        Chbox_ClaveAdmin = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Clave Usuario");
+        lbl_ClaveUsu.setText("Clave Usuario");
 
-        jLabel2.setText("Clave Admin");
+        lbl_ClaveAdmin.setText("Clave Admin");
 
-        jLabel3.setText("Tarifa x hora");
+        lbl_Tarifa.setText("Tarifa x hora");
 
-        jButton1.setText("Cambiar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        lbl_Tipo.setText("Tipo");
+
+        lbl_Marca.setText("Marca");
+
+        lbl_Modelo.setText("Modelo");
+
+        lbl_Color.setText("Color");
+
+        btn_Cambiar.setText("Cambiar");
+        btn_Cambiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_CambiarActionPerformed(evt);
+            }
+        });
+
+        Chbox_ClaveUsu.setSelected(true);
+        Chbox_ClaveUsu.setToolTipText("Visible la clave");
+        Chbox_ClaveUsu.setBorderPaintedFlat(true);
+
+        Chbox_ClaveAdmin.setSelected(true);
+        Chbox_ClaveAdmin.setToolTipText("Visible la clave");
+        Chbox_ClaveAdmin.setBorderPaintedFlat(true);
+        Chbox_ClaveAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Chbox_ClaveAdminActionPerformed(evt);
             }
         });
 
@@ -82,50 +113,93 @@ public class MenuAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_Tipo)
+                    .addComponent(lbl_Marca)
+                    .addComponent(lbl_Modelo)
+                    .addComponent(lbl_Color))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_Tipo)
+                    .addComponent(txt_Marca, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txt_Modelo, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txt_Color, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGap(59, 59, 59)
+                        .addComponent(btn_Cambiar))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(lbl_ClaveUsu)
+                            .addComponent(lbl_ClaveAdmin)
+                            .addComponent(lbl_Tarifa))
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_claveUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(txt_claveUsuario)
                             .addComponent(txt_claveadmin)
-                            .addComponent(txt_tarifa)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jButton1)))
-                .addContainerGap(155, Short.MAX_VALUE))
+                            .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Chbox_ClaveUsu)
+                            .addComponent(Chbox_ClaveAdmin))))
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txt_claveUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_claveadmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(23, 23, 23)
-                .addComponent(jButton1)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl_ClaveUsu)
+                            .addComponent(txt_claveUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Chbox_ClaveUsu))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txt_claveadmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbl_ClaveAdmin))
+                            .addComponent(Chbox_ClaveAdmin))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_Tarifa))
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Cambiar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_Color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_Color))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_Tipo))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_Marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_Marca))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_Modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_Modelo))))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_CambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CambiarActionPerformed
         CambiarClave();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_CambiarActionPerformed
+
+    private void Chbox_ClaveAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chbox_ClaveAdminActionPerformed
+        if(Chbox_ClaveAdmin.isSelected()){
+            
+        }
+    }//GEN-LAST:event_Chbox_ClaveAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,10 +237,20 @@ public class MenuAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JCheckBox Chbox_ClaveAdmin;
+    private javax.swing.JCheckBox Chbox_ClaveUsu;
+    private javax.swing.JButton btn_Cambiar;
+    private javax.swing.JLabel lbl_ClaveAdmin;
+    private javax.swing.JLabel lbl_ClaveUsu;
+    private javax.swing.JLabel lbl_Color;
+    private javax.swing.JLabel lbl_Marca;
+    private javax.swing.JLabel lbl_Modelo;
+    private javax.swing.JLabel lbl_Tarifa;
+    private javax.swing.JLabel lbl_Tipo;
+    private javax.swing.JTextField txt_Color;
+    private javax.swing.JTextField txt_Marca;
+    private javax.swing.JTextField txt_Modelo;
+    private javax.swing.JTextField txt_Tipo;
     private javax.swing.JTextField txt_claveUsuario;
     private javax.swing.JTextField txt_claveadmin;
     private javax.swing.JTextField txt_tarifa;

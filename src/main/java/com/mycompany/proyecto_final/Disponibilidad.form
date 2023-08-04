@@ -86,13 +86,15 @@
                   <Component id="tbtn_Puesto_6" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="tbtn_Puesto_13" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="tbtn_Puesto_14" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="tbtn_Puesto_15" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="tbtn_Puesto_11" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="tbtn_Puesto_12" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="tbtn_Puesto_13" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_14" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="tbtn_Puesto_15" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="20" max="32767" attributes="0"/>

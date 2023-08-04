@@ -21,19 +21,6 @@ public class Disponibilidad extends javax.swing.JFrame {
     public static String matricula;
     public int disponibilidad;
 
-    public void VerDisponibilidad() {
-        String consulta = "call parqueadero.BUSCARDisponibles('" + 1111 + "')";
-        Conec cn = new Conec();
-        try {
-            ResultSet res = cn.EjecutaSQL(consulta);
-            if (res.next()) {
-                disponibilidad = res.getInt(3);
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
     public void ActualizarToggles() {
         ObtenerValoresToggles(tbtn_Puesto_1, 1);
         ObtenerValoresToggles(tbtn_Puesto_2, 2);
@@ -277,13 +264,14 @@ public class Disponibilidad extends javax.swing.JFrame {
                     .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
