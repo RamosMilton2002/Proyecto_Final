@@ -22,7 +22,7 @@ public class EntradaSalida extends javax.swing.JFrame {
 
     public void VerDisponibilidad() {
         Disponibilidad dn = new Disponibilidad();
-        String consulta = "call parqueadero.BUSCARDisponibles('" + txt_matricula.getText() + "')";
+        String consulta = "call parqueadero.VerDisponibles('" + txt_matricula.getText() + "')";
         Conec cn = new Conec();
         try {
             ResultSet res = cn.EjecutaSQL(consulta);
@@ -232,6 +232,7 @@ public class EntradaSalida extends javax.swing.JFrame {
             Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
+        dn.ActualizarToggles();
     }//GEN-LAST:event_btn_RegistrarHoraActionPerformed
 
     /**
