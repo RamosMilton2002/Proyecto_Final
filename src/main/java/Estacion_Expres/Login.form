@@ -74,14 +74,14 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ESATCION EXPRES"/>
+            <Property name="text" type="java.lang.String" value="ESTACION EXPRES"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="txtPass">
         </Component>
         <Component class="javax.swing.JLabel" name="lblCon">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CONTRASE&#xd1;A:"/>
+            <Property name="text" type="java.lang.String" value="CLAVE DE ACCESO:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnIni">

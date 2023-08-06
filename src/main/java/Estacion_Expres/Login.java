@@ -44,9 +44,9 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("ESATCION EXPRES");
+        jLabel1.setText("ESTACION EXPRES");
 
-        lblCon.setText("CONTRASEÑA:");
+        lblCon.setText("CLAVE DE ACCESO:");
 
         btnIni.setText("INICIAR");
         btnIni.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +118,7 @@ public class Login extends javax.swing.JFrame {
 
                 } else if (res.getInt(1) == 1) {
                     Menu ad = new Menu();
+                    
                     ad.setVisible(true);
                     this.dispose();
                  
