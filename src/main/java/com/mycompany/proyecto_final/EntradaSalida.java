@@ -5,7 +5,7 @@
 package com.mycompany.proyecto_final;
 
 import Estacion_Expres.Conec;
-import Estacion_Expres.Registros;
+import Estacion_Expres.Vehiculo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -22,7 +22,7 @@ public class EntradaSalida extends javax.swing.JFrame {
 
     public void VerDisponibilidad() {
         Disponibilidad dn = new Disponibilidad();
-        String consulta = "call parqueadero.VerDisponibles('" + txt_matricula.getText() + "')";
+        String consulta = "call sistema_parqueadero.VerDisponibles('" + txt_matricula.getText() + "')";
         Conec cn = new Conec();
         try {
             ResultSet res = cn.EjecutaSQL(consulta);
@@ -50,7 +50,7 @@ public class EntradaSalida extends javax.swing.JFrame {
     }
 
     public void BuscarVehiculo() {
-        String Consulta = "call parqueadero.BUSCARVEHI('" + txt_matricula.getText() + "')";
+        String Consulta = "call sistema_parqueadero.BUSCARVEHI('" + txt_matricula.getText() + "')";
         Conec cn = new Conec();
         try {
             ResultSet res = cn.EjecutaSQL(Consulta);
@@ -65,8 +65,8 @@ public class EntradaSalida extends javax.swing.JFrame {
             } else {
                 int opcion = JOptionPane.showConfirmDialog(null, "Desea Registrar un nuevo vehiculo?", "Registrar", JOptionPane.YES_NO_OPTION);
                 if (opcion == JOptionPane.YES_OPTION) {
-                    Registros reg = new Registros();
-                    reg.setVisible(true);
+                    Vehiculo vh = new Vehiculo();
+                    vh.setVisible(true);
                 } else if (opcion == JOptionPane.NO_OPTION) {
                     System.out.println("El usuario eligió 'No'");
                 }
@@ -217,7 +217,7 @@ public class EntradaSalida extends javax.swing.JFrame {
     private void btn_RegistrarHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarHoraActionPerformed
         Disponibilidad dn = new Disponibilidad();
         int puesto = Disponibilidad.puesto;
-        String Consulta = "call parqueadero.Registros('" + txt_matricula.getText() + "', " + puesto + ", '" + txt_observaciones.getText() + "')";
+        String Consulta = "call sistema_parqueadero.Registros('" + txt_matricula.getText() + "', " + puesto + ", '" + txt_observaciones.getText() + "')";
         Conec cn = new Conec();
         try {
             ResultSet res = cn.EjecutaSQL(Consulta);

@@ -103,46 +103,38 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
 //         String user = txtUsu.getText();
         String pass = String.valueOf(txtPass.getPassword());
-        String consulta = "call sistema_parqueadero.Validacion_Credenciales(  '"+pass+"' )";
+        String consulta = "call sistema_parqueadero.Validacion_Credenciales('" + pass + "')";
         System.out.println(consulta);
         Conec cn = new Conec();
-        
 
         try {
             ResultSet res = cn.EjecutaSQL(consulta);
-                if (res.next()){
-                    System.out.println(res);
-                if ( pass.isBlank()) {
+            if (res.next()) {
+                System.out.println(res);
+                if (pass.isBlank()) {
                     JOptionPane.showMessageDialog(null, "Tiene campos en blanco", "Error", JOptionPane.ERROR_MESSAGE);
-                    
-
                 } else if (res.getInt(1) == 1) {
                     Menu ad = new Menu();
-                    
                     ad.setVisible(true);
-                    this.dispose();
-                 
-
+                    this.setVisible(false);
                     LocalDateTime horaIngreso = LocalDateTime.now();
                     System.out.println("Hora de ingreso: " + horaIngreso);
 
 //                    String registro = "Usuario: " + user + ", Hora de ingreso: " + horaIngreso;
 //                    guardarRegistro(registro);
-
-                } else if (res.getInt(1) == 2){
+                } else if (res.getInt(1) == 2) {
                     System.out.println("hola");
-                } else if (res.getInt(1) == 0){
+                } else if (res.getInt(1) == 0) {
                     JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
                 }
 
-            } 
+            }
 
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnIniActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */

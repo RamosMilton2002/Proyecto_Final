@@ -4,8 +4,13 @@
  */
 package Estacion_Expres;
 
+import com.mycompany.proyecto_final.Disponibilidad;
 import com.mycompany.proyecto_final.MenuAdmin;
-import com.mycompany.proyecto_final.Registros;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,8 +37,9 @@ public class Menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        btn_disponibilidad = new javax.swing.JButton();
+        btn_MenuAdmin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,12 +52,24 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("SIMULACION");
-
         jButton3.setText("SALIR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
+            }
+        });
+
+        btn_disponibilidad.setText("DISPONIBILIDAD");
+        btn_disponibilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_disponibilidadActionPerformed(evt);
+            }
+        });
+
+        btn_MenuAdmin.setText("MenuAdmin");
+        btn_MenuAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_MenuAdminActionPerformed(evt);
             }
         });
 
@@ -61,11 +79,12 @@ public class Menu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(147, 147, 147)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_disponibilidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_MenuAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(180, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -75,9 +94,11 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(88, 88, 88)
-                .addComponent(jButton2)
-                .addGap(64, 64, 64)
+                .addGap(18, 18, 18)
+                .addComponent(btn_disponibilidad)
+                .addGap(18, 18, 18)
+                .addComponent(btn_MenuAdmin)
+                .addGap(93, 93, 93)
                 .addComponent(jButton3)
                 .addGap(127, 127, 127))
         );
@@ -106,15 +127,45 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         Cliente cli = new Cliente();
         cli.setVisible(true);
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Login log=new Login();
+        Login log = new Login();
         log.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btn_disponibilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_disponibilidadActionPerformed
+        Disponibilidad dn = new Disponibilidad();
+        dn.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_disponibilidadActionPerformed
+
+    private void btn_MenuAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MenuAdminActionPerformed
+        String clave = JOptionPane.showInputDialog("Ingrese la clave de admin");
+        String Consulta = "call sistema_parqueadero.Validacion_Credenciales('" + clave + "');";
+        Conec cn = new Conec();
+        try {
+            ResultSet res = cn.EjecutaSQL(Consulta);
+            if (res.next()) {
+                if (clave.isBlank()) {
+                    JOptionPane.showMessageDialog(this, "Clave en blanco", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (res.getInt(1) == 2) {
+                    MenuAdmin ad = new MenuAdmin();
+                    ad.setVisible(true);
+                    this.setVisible(false);
+                } else if (res.getInt(1) == 0) {
+                    JOptionPane.showMessageDialog(this, "Clave Incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                System.out.println("Algo fallo al ejecutar el SQL");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_MenuAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,8 +203,9 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_MenuAdmin;
+    private javax.swing.JButton btn_disponibilidad;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

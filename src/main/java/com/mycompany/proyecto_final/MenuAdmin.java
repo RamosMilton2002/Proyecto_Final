@@ -7,6 +7,7 @@ package com.mycompany.proyecto_final;
 
 import Estacion_Expres.Conec;
 import Estacion_Expres.Conexion;
+import Estacion_Expres.Menu;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -72,6 +73,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         btn_Cambiar = new javax.swing.JButton();
         Chbox_ClaveUsu = new javax.swing.JCheckBox();
         Chbox_ClaveAdmin = new javax.swing.JCheckBox();
+        btn_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,6 +111,13 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
 
+        btn_Salir.setText("Salir");
+        btn_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,9 +138,6 @@ public class MenuAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(btn_Cambiar))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_ClaveUsu)
                             .addComponent(lbl_ClaveAdmin)
@@ -144,7 +150,12 @@ public class MenuAdmin extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Chbox_ClaveUsu)
-                            .addComponent(Chbox_ClaveAdmin))))
+                            .addComponent(Chbox_ClaveAdmin)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(btn_Cambiar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
@@ -169,7 +180,9 @@ public class MenuAdmin extends javax.swing.JFrame {
                             .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_Tarifa))
                         .addGap(18, 18, 18)
-                        .addComponent(btn_Cambiar))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_Cambiar)
+                            .addComponent(btn_Salir)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txt_Color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,6 +214,12 @@ public class MenuAdmin extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_Chbox_ClaveAdminActionPerformed
+
+    private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,6 +260,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JCheckBox Chbox_ClaveAdmin;
     private javax.swing.JCheckBox Chbox_ClaveUsu;
     private javax.swing.JButton btn_Cambiar;
+    private javax.swing.JButton btn_Salir;
     private javax.swing.JLabel lbl_ClaveAdmin;
     private javax.swing.JLabel lbl_ClaveUsu;
     private javax.swing.JLabel lbl_Color;

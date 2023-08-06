@@ -4,6 +4,8 @@
 
 package com.mycompany.proyecto_final;
 
+import Estacion_Expres.Login;
+
 /**
  *
  * @author MSI-THIN
@@ -11,6 +13,7 @@ package com.mycompany.proyecto_final;
 public class Proyecto_final {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Login log = new Login();
+        log.setVisible(true);
     }
 }

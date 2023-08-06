@@ -41,10 +41,6 @@
               <EmptySpace pref="57" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                      <Component id="btn_Cambiar" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lbl_ClaveUsu" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_ClaveAdmin" min="-2" max="-2" attributes="0"/>
@@ -61,6 +57,12 @@
                           <Component id="Chbox_ClaveUsu" min="-2" max="-2" attributes="0"/>
                           <Component id="Chbox_ClaveAdmin" min="-2" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btn_Cambiar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btn_Salir" min="-2" pref="75" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
@@ -94,7 +96,10 @@
                           <Component id="lbl_Tarifa" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btn_Cambiar" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btn_Cambiar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_Salir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -196,6 +201,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Chbox_ClaveAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_Salir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SalirActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
