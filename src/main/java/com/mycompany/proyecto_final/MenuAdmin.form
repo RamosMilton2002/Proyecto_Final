@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lbl_Tipo" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -48,9 +48,9 @@
                       </Group>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txt_claveUsuario" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txt_claveadmin" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txt_tarifa" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="txt_tarifa" alignment="0" pref="100" max="32767" attributes="0"/>
+                          <Component id="txt_claveUsuario" max="32767" attributes="0"/>
+                          <Component id="txt_claveAdmin" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -67,12 +67,17 @@
               </Group>
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="157" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -85,8 +90,8 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_claveadmin" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lbl_ClaveAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_claveAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="Chbox_ClaveAdmin" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -123,7 +128,9 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="177" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="157" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -134,14 +141,10 @@
         <Property name="text" type="java.lang.String" value="Clave Usuario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_claveUsuario">
-    </Component>
     <Component class="javax.swing.JLabel" name="lbl_ClaveAdmin">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clave Admin"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txt_claveadmin">
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Tarifa">
       <Properties>
@@ -156,6 +159,10 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_Tipo">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_TipoMouseClicked"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_TipoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Marca">
       <Properties>
@@ -163,6 +170,10 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_Marca">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_MarcaMouseClicked"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_MarcaKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Modelo">
       <Properties>
@@ -170,6 +181,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_Modelo">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_ModeloMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Color">
       <Properties>
@@ -177,6 +191,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_Color">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_ColorMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_Cambiar">
       <Properties>
@@ -192,6 +209,9 @@
         <Property name="toolTipText" type="java.lang.String" value="Visible la clave"/>
         <Property name="borderPaintedFlat" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Chbox_ClaveUsuActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="Chbox_ClaveAdmin">
       <Properties>
@@ -211,5 +231,42 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SalirActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JPasswordField" name="txt_claveUsuario">
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="txt_claveAdmin">
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="tbl_Catalogo">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="1" rowCount="4">
+                <Column editable="false" title="" type="java.lang.Object"/>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbl_CatalogoMouseClicked"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
