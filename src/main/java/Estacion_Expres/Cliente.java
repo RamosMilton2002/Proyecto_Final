@@ -337,11 +337,6 @@ public class Cliente extends javax.swing.JFrame {
             ResultSet re = c1.EjecutaSQL(sql2);
             if (re.next()) {
                 int selectedRow = tblCli.getSelectedRow();
-                if (selectedRow == -1) {
-                    JOptionPane.showMessageDialog(this, "Por favor, seleccione un registro para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
-                } else {
-
-                }
                 String sql3 = ("call sistema_parqueadero.MODIFICARPER('" + cedula + "','" + nombre + "','" + apellido + "','" + telefono + "','" + direccion + "','" + correo + "')");
                 c1.EjecutaSQL(sql3);
             } else {
