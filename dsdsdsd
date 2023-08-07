@@ -1,0 +1,132 @@
+[33mcommit a425b182352e34d21784c84152005e50a12341f0[m[33m ([m[1;36mHEAD -> [m[1;32mpre_Produccion[m[33m, [m[1;31morigin/Paul_Brach[m[33m, [m[1;32mPaul_Brach[m[33m)[m
+Author: P-Diaz <132587300+P-Diaz@users.noreply.github.com>
+Date:   Sat Aug 5 18:31:22 2023 -0500
+
+    rediseño del menu admin
+
+[33mcommit 65d5d301054bd522668d46daf3553b35a94303f8[m
+Author: P-Diaz <132587300+P-Diaz@users.noreply.github.com>
+Date:   Fri Aug 4 16:47:48 2023 -0500
+
+    Finalizacion del metodo Disponibilidad y entradaSalida
+
+[33mcommit cf6bf1283824afdb6f3bcdbd0986a4b0f1bc8034[m
+Author: P-Diaz <132587300+P-Diaz@users.noreply.github.com>
+Date:   Fri Aug 4 12:50:47 2023 -0500
+
+    Arreglo de errores
+
+[33mcommit 5d454378998f13fd4a584ebca4e18c67ec352144[m
+Author: P-Diaz <132587300+P-Diaz@users.noreply.github.com>
+Date:   Thu Aug 3 10:41:23 2023 -0500
+
+    Creacion de Metodo en todos los botones de Disponibilidad
+
+[33mcommit 58f0e2b6c48ed998238ff34f8e308fb6b31864ff[m
+Author: P-Diaz <132587300+P-Diaz@users.noreply.github.com>
+Date:   Wed Aug 2 22:51:22 2023 -0500
+
+    metodo para cargar los toggle buttons, actualizacion del estado del estacionamiento
+
+[33mcommit 45e9c4480eb91bd04f005c1ea7b1458c5e2903c5[m
+Author: P-Diaz <132587300+P-Diaz@users.noreply.github.com>
+Date:   Wed Aug 2 17:15:51 2023 -0500
+
+    Cambio de nombre de Registros a EntradaSalida , creacion de metodo para la hora y la fecha y realizacion de registros dentro de la base de datos
+
+[33mcommit 8b087289402a14d8e8b0b3486b9ea8ff46dc157c[m[33m ([m[1;31morigin/Pre_Produccion[m[33m)[m
+Merge: 059ce76 248e1e4
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Wed Aug 2 09:47:02 2023 -0500
+
+    Integracion ramas Milton_branch y Paul_Brach
+
+[33mcommit 059ce760a107b2310e1c6138b35651ddd40fc4c2[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Wed Aug 2 09:25:22 2023 -0500
+
+    registro
+
+[33mcommit 9f7ca49605f24a8e061064a683c5b04bd3bf57c8[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Wed Aug 2 08:53:27 2023 -0500
+
+    Creacion de Registro
+
+[33mcommit 248e1e48ea14422826ac33b2c225bb2c804c7ca1[m
+Author: P-Diaz <132587300+P-Diaz@users.noreply.github.com>
+Date:   Wed Aug 2 08:53:04 2023 -0500
+
+    Creacion del form Disponibilidad y primeros pasos del mismo
+
+[33mcommit 03e5f21c66439095c66bf8eb6c347e0ffe39ea88[m
+Author: P-Diaz <132587300+P-Diaz@users.noreply.github.com>
+Date:   Tue Aug 1 12:21:57 2023 -0500
+
+    Validacion de registros de vehiculos
+
+[33mcommit fec8982f09d05684b7070bf869d99623d27bd854[m
+Author: P-Diaz <132587300+P-Diaz@users.noreply.github.com>
+Date:   Tue Aug 1 11:47:30 2023 -0500
+
+    Menu de admin con Cambio de claves
+
+[33mcommit 7bffee8b323427df17aaf47c7be18e2556552c8c[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Tue Aug 1 11:17:16 2023 -0500
+
+    Arreglos de login y Menu
+
+[33mcommit b764458f0b64311adc675c2de4f75f33aca47f5a[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Tue Aug 1 10:28:24 2023 -0500
+
+    Arreglo dos del login
+
+[33mcommit 5fd4f524e1393667ca4bf271be6561b59f3a8f06[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Tue Aug 1 10:13:42 2023 -0500
+
+    Arreglo de login
+
+[33mcommit b31702e4df2474537fa17116746c7bd19bd3c7e1[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Tue Aug 1 10:12:08 2023 -0500
+
+    Areglo de login
+
+[33mcommit 5af072df7e8c99e2112480fdf30943e507990638[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Mon Jul 31 23:09:46 2023 -0500
+
+    Creacion de login
+
+[33mcommit 2959911e5528b0da4d66a58cd89f0bd43a3cae28[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Fri Jul 28 10:04:16 2023 -0500
+
+    Modleo vista controlador
+
+[33mcommit 1cd6f5593890c243982d7cf6d71e59e4f6a05367[m[33m ([m[1;32mMilton_branch[m[33m)[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Thu Jul 27 22:13:49 2023 -0500
+
+    Creacion de Archivo
+
+[33mcommit 5f8e26500955ffa4f4b6dd4086951e09c17d9311[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Thu Jul 27 22:04:44 2023 -0500
+
+    Conexion a base de datos
+
+[33mcommit efc78cbcda88c49315c5429de14823b237949378[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Thu Jul 27 20:11:33 2023 -0500
+
+    Conexion con base de datos
+
+[33mcommit 32f2626b7c39c328410b260bfc3c9fed0a8476df[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/Pruebas[m[33m, [m[1;31morigin/Produccion[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: MiltonRamos2002 <milton.ramos954@ist17dejulio.edu.ec>
+Date:   Thu Jul 13 13:00:44 2023 -0500
+
+    Primer versinamiento del proyecto

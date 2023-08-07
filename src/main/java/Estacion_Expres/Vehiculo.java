@@ -4,7 +4,6 @@
  */
 package Estacion_Expres;
 
-import com.mycompany.proyecto_final.Registros;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -42,9 +41,9 @@ public class Vehiculo extends javax.swing.JFrame {
                 ComboxTipo.addItem(res.getString("Cat_Nombre"));
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -57,9 +56,9 @@ public class Vehiculo extends javax.swing.JFrame {
                 ComboxColor.addItem(res.getString("Cat_Nombre"));
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -424,9 +423,9 @@ public class Vehiculo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_ComboxTipoActionPerformed
 
@@ -455,9 +454,9 @@ public class Vehiculo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_CmboxMarcaActionPerformed
@@ -487,9 +486,9 @@ public class Vehiculo extends javax.swing.JFrame {
                 }
             }
             }catch (ClassNotFoundException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         }catch (SQLException ex) {
-            Logger.getLogger(Registros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_btnBusActionPerformed

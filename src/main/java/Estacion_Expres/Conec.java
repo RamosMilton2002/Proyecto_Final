@@ -20,12 +20,12 @@ public class Conec {
 
     Connection co;
 
+//    private String url = "jdbc:mysql://localhost:3306/sistema_parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL";
+//    private String usuario = "root";
+//    private String clave = "2002";
     private String url = "jdbc:mysql://localhost:3306/sistema_parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String usuario = "root";
-    private String clave = "2002";
-//    private String url = "jdbc:mysql://localhost:3306/parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL";
-//    private String usuario = "root";
-//    private String clave = "";
+    private String clave = "";
 
     public ResultSet EjecutaSQL(String Sql) throws ClassNotFoundException {
 
