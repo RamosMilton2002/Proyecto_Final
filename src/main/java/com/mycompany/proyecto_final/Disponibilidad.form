@@ -103,7 +103,7 @@
                       <Component id="tbtn_Puesto_15" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -111,6 +111,9 @@
   <SubComponents>
     <Component class="javax.swing.JToggleButton" name="tbtn_Puesto_1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Book Antiqua" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Disponible"/>
       </Properties>
       <Events>

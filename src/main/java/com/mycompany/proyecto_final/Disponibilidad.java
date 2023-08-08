@@ -60,7 +60,6 @@ public class Disponibilidad extends javax.swing.JFrame {
             ResultSet res = cn.EjecutaSQL(consulta);
             if (res.next()) {
                 matricula = res.getString(2);
-                System.out.println(matricula);
             } else {
                 matricula = null;
             }
@@ -103,6 +102,7 @@ public class Disponibilidad extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        tbtn_Puesto_1.setFont(new java.awt.Font("Book Antiqua", 1, 12)); // NOI18N
         tbtn_Puesto_1.setText("Disponible");
         tbtn_Puesto_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -286,7 +286,7 @@ public class Disponibilidad extends javax.swing.JFrame {
                         .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();

@@ -20,6 +20,21 @@ public class EntradaSalida extends javax.swing.JFrame {
 
     public int disponibilidad;
 
+    public double Tarifa (){
+        double tarifa = 0;
+        Conec cn = new Conec();
+        String Consulta = "call sistema_parqueadero.CalcularTarifa('"+txt_matricula.getText()+"')";
+        try {
+            
+            ResultSet res = cn.EjecutaSQL(Consulta);
+            if (res.next()){
+                tarifa = res.getDouble(1);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tarifa;
+    }
     public void VerDisponibilidad() {
         Disponibilidad dn = new Disponibilidad();
         String consulta = "call sistema_parqueadero.VerDisponibles('" + txt_matricula.getText() + "')";
@@ -34,19 +49,34 @@ public class EntradaSalida extends javax.swing.JFrame {
         }
     }
 
-    public void Hora() {
-        String Consulta = "select date(now()), time(now())";
+    public String Hora() {
+        String Consulta = "select time(now())";
         Conec cn = new Conec();
-
+        String hora = null;
         try {
             ResultSet res = cn.EjecutaSQL(Consulta);
-            while (res.next()) {
-                lbl_Fecha.setText(res.getString(1));
-                lbl_hora.setText(res.getString(2));
+            if (res.next()) {
+                hora = res.getString(1);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return hora;
+    }
+    
+    public String Fecha() {
+        String Consulta = "select date(now())";
+        Conec cn = new Conec();
+        String fecha = null;
+        try {
+            ResultSet res = cn.EjecutaSQL(Consulta);
+            if (res.next()) {
+                fecha = res.getString(1);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return fecha;
     }
 
     public void BuscarVehiculo() {
@@ -79,7 +109,7 @@ public class EntradaSalida extends javax.swing.JFrame {
 
     public EntradaSalida() {
         initComponents();
-        Hora();
+        lbl_Fecha.setText(Fecha());
         txt_observaciones.setVisible(false);
         btn_RegistrarHora.setVisible(false);
         lbl_Observaciones.setVisible(false);
@@ -208,7 +238,6 @@ public class EntradaSalida extends javax.swing.JFrame {
         VerDisponibilidad();
         if (disponibilidad == 1) {
             JOptionPane.showMessageDialog(rootPane, "El vehiculo ya esta en un puesto");
-            txt_matricula.setText(null);
         } else {
             BuscarVehiculo();
         }
@@ -217,15 +246,17 @@ public class EntradaSalida extends javax.swing.JFrame {
     private void btn_RegistrarHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarHoraActionPerformed
         Disponibilidad dn = new Disponibilidad();
         int puesto = Disponibilidad.puesto;
-        String Consulta = "call sistema_parqueadero.Registros('" + txt_matricula.getText() + "', " + puesto + ", '" + txt_observaciones.getText() + "')";
+        String Consulta = "call sistema_parqueadero.Registros('" + txt_matricula.getText() + "', " + puesto + ", '" + txt_observaciones.getText() + "')";                 
         Conec cn = new Conec();
         try {
             ResultSet res = cn.EjecutaSQL(Consulta);
+            String hora = Hora();
             while (res.next()) {
-                if (res.getInt(1) == 1) {
-                    JOptionPane.showMessageDialog(rootPane, "Salida Registrada exitosamente");
+                if (res.getInt(1) == 1) {    
+                    double tarifa = Tarifa();
+                    JOptionPane.showMessageDialog(rootPane, "Salida Registrada exitosamente \n Hora de Salida: " + hora + "\n Su Tarifa es: " + tarifa + " $");
                 } else if (res.getInt(1) == 2) {
-                    JOptionPane.showMessageDialog(rootPane, "Entrada Registrada exitosamente");
+                    JOptionPane.showMessageDialog(rootPane, "Entrada Registrada exitosamente \n Hora de Ingreso: "+ hora);
                 }
             }
         } catch (ClassNotFoundException | SQLException ex) {
