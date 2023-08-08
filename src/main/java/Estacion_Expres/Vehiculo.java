@@ -4,6 +4,7 @@
  */
 package Estacion_Expres;
 
+import com.mycompany.proyecto_final.Disponibilidad;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -101,8 +102,11 @@ public class Vehiculo extends javax.swing.JFrame {
         CmboxMarca = new javax.swing.JComboBox<>();
         btnBus = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnlV.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel8.setText("VEHICULOS");
 
@@ -204,6 +208,8 @@ public class Vehiculo extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\MSI-THIN\\Downloads\\embotellamiento.png")); // NOI18N
+
         javax.swing.GroupLayout pnlVLayout = new javax.swing.GroupLayout(pnlV);
         pnlV.setLayout(pnlVLayout);
         pnlVLayout.setHorizontalGroup(
@@ -229,22 +235,26 @@ public class Vehiculo extends javax.swing.JFrame {
                                         .addGap(25, 25, 25)))
                                 .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(pnlVLayout.createSequentialGroup()
-                                        .addComponent(txtCedCli, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnBus))
-                                    .addComponent(CmboxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ComboxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlVLayout.createSequentialGroup()
+                                                .addComponent(txtCedCli, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnBus))
+                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(CmboxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ComboxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ComboxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlVLayout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(108, 108, 108)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
         pnlVLayout.setVerticalGroup(
             pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,36 +268,39 @@ public class Vehiculo extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jLabel10))
                 .addGap(8, 8, 8)
-                .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMatr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCedCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBus))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComboxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CmboxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComboxModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ComboxColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlVLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnRegistr))
-                    .addGroup(pnlVLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton4)))
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtMatr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCedCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBus))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ComboxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CmboxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ComboxModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboxColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlVLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jButton4)
+                                .addGap(35, 35, 35)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlVLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnRegistr))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -296,15 +309,11 @@ public class Vehiculo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+                .addComponent(pnlV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(pnlV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -325,7 +334,7 @@ public class Vehiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMatrActionPerformed
 
     private void txtCedCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedCliActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
 
     }//GEN-LAST:event_txtCedCliActionPerformed
 
@@ -333,41 +342,34 @@ public class Vehiculo extends javax.swing.JFrame {
         // TODO add your handling code here:
         Conec c1 = new Conec();
 
-        int cedula;
         String matricula = txtMatr.getText();
         int cedulacli = Integer.parseInt(txtCedCli.getText());
         String marca = CmboxMarca.getSelectedItem().toString();
         String modelo = ComboxModelo.getSelectedItem().toString();
         String color = ComboxColor.getSelectedItem().toString();
         String tipo = ComboxTipo.getSelectedItem().toString();
-//        String sql2 ="call sistema_parqueadero.BUSCARVEHI("+ matricula+");";
-//        ResultSet re = null;
-//        try {
-//            re = c1.EjecutaSQL(sql2);
-//        } catch (ClassNotFoundException ex) {
-//            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        try {
-//            if(re.next()){
-//                int selectedRow = TblaVe.getSelectedRow();
-//                if(selectedRow == -1){
-//                    JOptionPane.showMessageDialog(this, "Por favor, seleccione un registro para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
-//                }else{
-//                    
-//                }
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        String sql = ("call sistema_parqueadero.INSERTARVE('" + matricula + "','" + cedulacli + "','" + marca + "','"
-                + modelo + "','" + color + "','" + tipo + "')");
-        System.out.println("´´´´" + sql);
+        String sql1 = "call sistema_parqueadero.BUSCARVEHI('" + matricula + "');";
+
+
         try {
-            c1.EjecutaSQLIUD(sql);
+            ResultSet re = c1.EjecutaSQL(sql1);
+            if (re.next()) {
+                int selectedRow = TblaVe.getSelectedRow();
+                String sql2 = ("call sistema_parqueadero.ModificarVehi('" + matricula + "','" + cedulacli + "','" + marca + "','" + modelo + "','" + color + "','" + tipo + "')");
+                
+                c1.EjecutaSQL(sql2);
+            } else {
+                String sql3 = ("call sistema_parqueadero.INSERTARVE('" + matricula + "','" + cedulacli + "','" + marca + "','" + modelo + "','" + color + "','" + tipo + "')");
+                c1.EjecutaSQLIUD(sql3);
+            }
         } catch (ClassNotFoundException e) {
+        } catch (SQLException ex) {
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
         mostrarTablaVe();
         limpiar();
+        Disponibilidad d = new Disponibilidad();
+        d.setVisible(true);
 
     }//GEN-LAST:event_btnRegistrActionPerformed
 
@@ -381,7 +383,7 @@ public class Vehiculo extends javax.swing.JFrame {
             return;
         }
 
-        var Veh_Matricula = Integer.parseInt(TblaVe.getValueAt(selectedRow, 0).toString());
+        String Veh_Matricula = TblaVe.getValueAt(selectedRow, 0).toString();
 
         try {
             Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "2002");
@@ -389,7 +391,7 @@ public class Vehiculo extends javax.swing.JFrame {
             // Llamar al procedimiento almacenado para eliminar el registro
             String sql = "call sistema_parqueadero.ELIMINARVE(?)";
             CallableStatement statement = connection.prepareCall(sql);
-            statement.setInt(1, Veh_Matricula);
+            statement.setString(1, Veh_Matricula);
             statement.execute();
 
             statement.close();
@@ -403,8 +405,8 @@ public class Vehiculo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error al eliminar .", "Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
-        mostrarTablaVe();
-        limpiar();
+//        mostrarTablaVe();
+//        limpiar();
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -464,32 +466,40 @@ public class Vehiculo extends javax.swing.JFrame {
     private void btnBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusActionPerformed
         // TODO add your handling code here:
         Conec c = new Conec();
-        int cedula;
-        try {
-            cedula = Integer.parseInt(txtCedCli.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "El campo de cédula debe contener solo números.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        String sql = "call sistema_parqueadero.BUSCARPERSONAS(" + txtCedCli.getText() + ");";
-        try {
-            ResultSet res = c.EjecutaSQL(sql);
-            if (res.next()) {
-                JOptionPane.showMessageDialog(this, "Cliente existente.", "Cliente", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                int opcion = JOptionPane.showConfirmDialog(null, "Desea Registrar un nuevo cliente", "Registrar", JOptionPane.YES_NO_OPTION);
-                if (opcion == JOptionPane.YES_OPTION) {
-                    Cliente cl = new Cliente();
-                    cl.setVisible(true);
-                } else if (opcion == JOptionPane.NO_OPTION) {
-                    System.out.println("El usuario eligió 'No'");
-                }
+    String cedula = txtCedCli.getText();
+
+    if (cedula.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número de cédula.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    String sql = "CALL sistema_parqueadero.ObtenerDetallesVehiculo('" + cedula + "');";
+
+    try {
+        ResultSet res = c.EjecutaSQL(sql);
+        if (res.next()) {
+            JOptionPane.showMessageDialog(this, "Cliente existente.", "Cliente", JOptionPane.INFORMATION_MESSAGE);
+            txtCedCli.setText(res.getString("Per_Cedula"));
+            txtMatr.setText(res.getString("Veh_Matricula"));
+            ComboxTipo.setSelectedItem(res.getString("Veh_Tipo"));
+            CmboxMarca.setSelectedItem(res.getString("Veh_Marca"));
+            ComboxModelo.setSelectedItem(res.getString("Veh_Modelo"));
+            ComboxColor.setSelectedItem(res.getString("Veh_Color"));
+        } else {
+            int opcion = JOptionPane.showConfirmDialog(null, "Cliente no existe,Desea registrar un nuevo cliente?", "Registrar", JOptionPane.YES_NO_OPTION);
+            if (opcion == JOptionPane.YES_OPTION) {
+                Cliente cl = new Cliente();
+                cl.setVisible(true);
+            } else if (opcion == JOptionPane.NO_OPTION) {
+                System.out.println("El usuario eligió 'No'");
             }
-            }catch (ClassNotFoundException ex) {
-            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (SQLException ex) {
-            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (SQLException ex) {
+        Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    mostrarTablaVe();
 
     }//GEN-LAST:event_btnBusActionPerformed
 
@@ -500,11 +510,14 @@ public class Vehiculo extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-     
-
     public void mostrarTablaVe() {
-        
-        String sql = ("call sistema_parqueadero.MOSTRARVE();");
+        String sql;
+        if (txtCedCli.getText().isEmpty()) {
+            sql = ("call sistema_parqueadero.MOSTRARVE();");
+        } else {
+            sql = "call sistema_parqueadero.ObtenerDetallesVehiculo('" + txtCedCli.getText() + "');";
+        }
+
         DefaultTableModel modelo = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -587,6 +600,7 @@ public class Vehiculo extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistr;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

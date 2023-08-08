@@ -113,6 +113,12 @@ public class EntradaSalida extends javax.swing.JFrame {
         lbl_Fecha = new javax.swing.JLabel();
         lbl_Observaciones = new javax.swing.JLabel();
 
+        txt_matricula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_matriculaActionPerformed(evt);
+            }
+        });
+
         lbl_Matricula.setText("Matricula");
 
         btn_buscar.setText("Buscar");
@@ -234,6 +240,10 @@ public class EntradaSalida extends javax.swing.JFrame {
         this.setVisible(false);
         dn.ActualizarToggles();
     }//GEN-LAST:event_btn_RegistrarHoraActionPerformed
+
+    private void txt_matriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_matriculaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_matriculaActionPerformed
 
     /**
      * @param args the command line arguments
