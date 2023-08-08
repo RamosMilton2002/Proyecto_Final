@@ -20,12 +20,22 @@ public class EntradaSalida extends javax.swing.JFrame {
 
     public int disponibilidad;
 
+    public void ActualizarTarifa(){
+        double tarifa = Tarifa();
+        Conec cn = new Conec();
+        String Consulta = "update registros set Reg_coste = " + tarifa + " where veh_matricula = " + txt_matricula.getText() + " and Reg_coste is null";
+        try {
+            cn.EjecutaInstruccion(Consulta);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public double Tarifa (){
         double tarifa = 0;
         Conec cn = new Conec();
-        String Consulta = "call sistema_parqueadero.CalcularTarifa('"+txt_matricula.getText()+"')";
+        String Consulta = "select sistema_parqueadero.CalcularTarifa('"+txt_matricula.getText()+"')";
         try {
-            
             ResultSet res = cn.EjecutaSQL(Consulta);
             if (res.next()){
                 tarifa = res.getDouble(1);
@@ -138,7 +148,6 @@ public class EntradaSalida extends javax.swing.JFrame {
         lbl_Marca = new javax.swing.JLabel();
         lbl_Color = new javax.swing.JLabel();
         lbl_Tipo = new javax.swing.JLabel();
-        lbl_hora = new javax.swing.JLabel();
         txt_observaciones = new javax.swing.JTextField();
         lbl_Fecha = new javax.swing.JLabel();
         lbl_Observaciones = new javax.swing.JLabel();
@@ -167,8 +176,6 @@ public class EntradaSalida extends javax.swing.JFrame {
 
         lbl_Tipo.setText("Tipo: ");
 
-        lbl_hora.setText("Hora");
-
         lbl_Fecha.setText("Fecha");
 
         lbl_Observaciones.setText("Observaciones");
@@ -195,7 +202,6 @@ public class EntradaSalida extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lbl_Fecha)
-                            .addComponent(lbl_hora)
                             .addComponent(btn_RegistrarHora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(13, Short.MAX_VALUE))
@@ -216,12 +222,10 @@ public class EntradaSalida extends javax.swing.JFrame {
                         .addComponent(lbl_Modelo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lbl_Color)
-                        .addGap(2, 2, 2))
+                        .addGap(14, 14, 14))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl_Fecha)
-                        .addGap(31, 31, 31)
-                        .addComponent(lbl_hora)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(59, 59, 59)))
                 .addComponent(lbl_Tipo)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -255,6 +259,7 @@ public class EntradaSalida extends javax.swing.JFrame {
                 if (res.getInt(1) == 1) {    
                     double tarifa = Tarifa();
                     JOptionPane.showMessageDialog(rootPane, "Salida Registrada exitosamente \n Hora de Salida: " + hora + "\n Su Tarifa es: " + tarifa + " $");
+                    ActualizarTarifa();
                 } else if (res.getInt(1) == 2) {
                     JOptionPane.showMessageDialog(rootPane, "Entrada Registrada exitosamente \n Hora de Ingreso: "+ hora);
                 }
@@ -263,7 +268,6 @@ public class EntradaSalida extends javax.swing.JFrame {
             Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-        dn.ActualizarToggles();
     }//GEN-LAST:event_btn_RegistrarHoraActionPerformed
 
     /**
@@ -312,7 +316,6 @@ public class EntradaSalida extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Modelo;
     private javax.swing.JLabel lbl_Observaciones;
     private javax.swing.JLabel lbl_Tipo;
-    private javax.swing.JLabel lbl_hora;
     private javax.swing.JTextField txt_matricula;
     private javax.swing.JTextField txt_observaciones;
     // End of variables declaration//GEN-END:variables

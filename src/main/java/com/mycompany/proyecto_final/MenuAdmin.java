@@ -120,6 +120,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         LlenarDatos();
         txt_Marca.setEnabled(false);
         txt_Modelo.setEnabled(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -165,6 +166,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         txt_Tipo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txt_TipoMouseClicked(evt);
+            }
+        });
+        txt_Tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_TipoActionPerformed(evt);
             }
         });
         txt_Tipo.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -411,8 +417,13 @@ public class MenuAdmin extends javax.swing.JFrame {
             txt_Color.setText(tbl_Catalogo.getValueAt(tbl_Catalogo.getSelectedRow(), 0).toString());
         } else if (x == 1){
             txt_Tipo.setText(tbl_Catalogo.getValueAt(tbl_Catalogo.getSelectedRow(), 0).toString());
+            txt_Marca.setText(null);
+            txt_Marca.setEnabled(true);
+            txt_Modelo.setText(null);
+            txt_Modelo.setEnabled(false);
         } else if (x == m){
             txt_Marca.setText(tbl_Catalogo.getValueAt(tbl_Catalogo.getSelectedRow(), 0).toString());
+            txt_Modelo.setEnabled(true);
         }
     }//GEN-LAST:event_tbl_CatalogoMouseClicked
 
@@ -462,6 +473,10 @@ public class MenuAdmin extends javax.swing.JFrame {
             txt_Modelo.setEnabled(true);
         }
     }//GEN-LAST:event_txt_MarcaKeyTyped
+
+    private void txt_TipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_TipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_TipoActionPerformed
 
     /**
      * @param args the command line arguments
