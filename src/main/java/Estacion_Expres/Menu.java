@@ -41,6 +41,7 @@ public class Menu extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         btn_disponibilidad = new javax.swing.JButton();
         btn_MenuAdmin = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,7 +77,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 102, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 90, 60));
 
         btn_disponibilidad.setFont(new java.awt.Font("Book Antiqua", 1, 12)); // NOI18N
         btn_disponibilidad.setForeground(new java.awt.Color(87, 87, 87));
@@ -99,6 +100,15 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btn_MenuAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 208, -1));
+
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\MSI-THIN\\Downloads\\view_88987.png")); // NOI18N
+        jButton2.setText("VER REGISTROS");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 210, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,6 +173,13 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_MenuAdminActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Ver_Registros re = new Ver_Registros();
+        re.setVisible(true);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -202,6 +219,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btn_MenuAdmin;
     private javax.swing.JButton btn_disponibilidad;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
