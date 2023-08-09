@@ -38,6 +38,21 @@ public class Disponibilidad extends javax.swing.JFrame {
         ObtenerValoresToggles(tbtn_Puesto_13, 13);
         ObtenerValoresToggles(tbtn_Puesto_14, 14);
         ObtenerValoresToggles(tbtn_Puesto_15, 15);
+        ObtenerValoresToggles(tbtn_Puesto_16, 16);
+        ObtenerValoresToggles(tbtn_Puesto_17, 17);
+        ObtenerValoresToggles(tbtn_Puesto_18, 18);
+        ObtenerValoresToggles(tbtn_Puesto_19, 19);
+        ObtenerValoresToggles(tbtn_Puesto_20, 20);
+        ObtenerValoresToggles(tbtn_Puesto_21, 21);
+        ObtenerValoresToggles(tbtn_Puesto_22, 22);
+        ObtenerValoresToggles(tbtn_Puesto_23, 23);
+        ObtenerValoresToggles(tbtn_Puesto_24, 24);
+        ObtenerValoresToggles(tbtn_Puesto_25, 25);
+        ObtenerValoresToggles(tbtn_Puesto_26, 26);
+        ObtenerValoresToggles(tbtn_Puesto_27, 27);
+        ObtenerValoresToggles(tbtn_Puesto_28, 28);
+        ObtenerValoresToggles(tbtn_Puesto_29, 29);
+        ObtenerValoresToggles(tbtn_Puesto_30, 30);
     }
 
     public void ObtenerValoresToggles(JToggleButton toggleButton, int i) {
@@ -60,7 +75,6 @@ public class Disponibilidad extends javax.swing.JFrame {
             ResultSet res = cn.EjecutaSQL(consulta);
             if (res.next()) {
                 matricula = res.getString(2);
-                System.out.println(matricula);
             } else {
                 matricula = null;
             }
@@ -84,6 +98,7 @@ public class Disponibilidad extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         tbtn_Puesto_1 = new javax.swing.JToggleButton();
         tbtn_Puesto_2 = new javax.swing.JToggleButton();
         tbtn_Puesto_3 = new javax.swing.JToggleButton();
@@ -100,9 +115,28 @@ public class Disponibilidad extends javax.swing.JFrame {
         tbtn_Puesto_14 = new javax.swing.JToggleButton();
         tbtn_Puesto_15 = new javax.swing.JToggleButton();
         btn_Salir = new javax.swing.JButton();
+        tbtn_Puesto_16 = new javax.swing.JToggleButton();
+        tbtn_Puesto_17 = new javax.swing.JToggleButton();
+        tbtn_Puesto_18 = new javax.swing.JToggleButton();
+        tbtn_Puesto_19 = new javax.swing.JToggleButton();
+        tbtn_Puesto_20 = new javax.swing.JToggleButton();
+        tbtn_Puesto_21 = new javax.swing.JToggleButton();
+        tbtn_Puesto_22 = new javax.swing.JToggleButton();
+        tbtn_Puesto_23 = new javax.swing.JToggleButton();
+        tbtn_Puesto_24 = new javax.swing.JToggleButton();
+        tbtn_Puesto_25 = new javax.swing.JToggleButton();
+        tbtn_Puesto_26 = new javax.swing.JToggleButton();
+        tbtn_Puesto_27 = new javax.swing.JToggleButton();
+        tbtn_Puesto_28 = new javax.swing.JToggleButton();
+        tbtn_Puesto_29 = new javax.swing.JToggleButton();
+        tbtn_Puesto_30 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+
+        tbtn_Puesto_1.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_1.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_1.setText("Disponible");
         tbtn_Puesto_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +144,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_2.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_2.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_2.setText("Disponible");
         tbtn_Puesto_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,6 +153,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_3.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_3.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_3.setText("Disponible");
         tbtn_Puesto_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +162,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_4.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_4.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_4.setText("Disponible");
         tbtn_Puesto_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +171,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_5.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_5.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_5.setText("Disponible");
         tbtn_Puesto_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +180,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_6.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_6.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_6.setText("Disponible");
         tbtn_Puesto_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,6 +189,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_7.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_7.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_7.setText("Disponible");
         tbtn_Puesto_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +198,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_8.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_8.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_8.setText("Disponible");
         tbtn_Puesto_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +207,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_9.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_9.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_9.setText("Disponible");
         tbtn_Puesto_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,6 +216,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_10.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_10.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_10.setText("Disponible");
         tbtn_Puesto_10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,6 +225,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_11.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_11.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_11.setText("Disponible");
         tbtn_Puesto_11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,6 +234,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_12.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_12.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_12.setText("Disponible");
         tbtn_Puesto_12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,6 +243,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_13.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_13.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_13.setText("Disponible");
         tbtn_Puesto_13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,6 +252,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_14.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_14.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_14.setText("Disponible");
         tbtn_Puesto_14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,6 +261,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_15.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_15.setForeground(new java.awt.Color(87, 87, 87));
         tbtn_Puesto_15.setText("Disponible");
         tbtn_Puesto_15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,6 +270,8 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        btn_Salir.setFont(new java.awt.Font("Book Antiqua", 1, 12)); // NOI18N
+        btn_Salir.setForeground(new java.awt.Color(87, 87, 87));
         btn_Salir.setText("Salir");
         btn_Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,78 +279,284 @@ public class Disponibilidad extends javax.swing.JFrame {
             }
         });
 
+        tbtn_Puesto_16.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_16.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_16.setText("Disponible");
+        tbtn_Puesto_16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_16ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_17.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_17.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_17.setText("Disponible");
+        tbtn_Puesto_17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_17ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_18.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_18.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_18.setText("Disponible");
+        tbtn_Puesto_18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_18ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_19.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_19.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_19.setText("Disponible");
+        tbtn_Puesto_19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_19ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_20.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_20.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_20.setText("Disponible");
+        tbtn_Puesto_20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_20ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_21.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_21.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_21.setText("Disponible");
+        tbtn_Puesto_21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_21ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_22.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_22.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_22.setText("Disponible");
+        tbtn_Puesto_22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_22ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_23.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_23.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_23.setText("Disponible");
+        tbtn_Puesto_23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_23ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_24.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_24.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_24.setText("Disponible");
+        tbtn_Puesto_24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_24ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_25.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_25.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_25.setText("Disponible");
+        tbtn_Puesto_25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_25ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_26.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_26.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_26.setText("Disponible");
+        tbtn_Puesto_26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_26ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_27.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_27.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_27.setText("Disponible");
+        tbtn_Puesto_27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_27ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_28.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_28.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_28.setText("Disponible");
+        tbtn_Puesto_28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_28ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_29.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_29.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_29.setText("Disponible");
+        tbtn_Puesto_29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_29ActionPerformed(evt);
+            }
+        });
+
+        tbtn_Puesto_30.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        tbtn_Puesto_30.setForeground(new java.awt.Color(87, 87, 87));
+        tbtn_Puesto_30.setText("Disponible");
+        tbtn_Puesto_30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_Puesto_30ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 566, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(tbtn_Puesto_1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_Salir))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(tbtn_Puesto_16, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tbtn_Puesto_17, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_18, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_19, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tbtn_Puesto_7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(tbtn_Puesto_21, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tbtn_Puesto_22, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tbtn_Puesto_23, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tbtn_Puesto_24, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tbtn_Puesto_25, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(tbtn_Puesto_26, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tbtn_Puesto_27, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tbtn_Puesto_28, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tbtn_Puesto_29, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tbtn_Puesto_30, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(107, 107, 107)))
+                    .addContainerGap()))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 556, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tbtn_Puesto_2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_Salir)
+                        .addComponent(tbtn_Puesto_1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tbtn_Puesto_7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tbtn_Puesto_18, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_19, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_17, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbtn_Puesto_16, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tbtn_Puesto_21, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tbtn_Puesto_23, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtn_Puesto_24, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtn_Puesto_25, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtn_Puesto_22, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tbtn_Puesto_26, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tbtn_Puesto_28, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtn_Puesto_29, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtn_Puesto_30, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtn_Puesto_27, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tbtn_Puesto_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tbtn_Puesto_8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tbtn_Puesto_9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(132, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tbtn_Puesto_1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_Salir)
-                        .addGap(25, 25, 25))))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tbtn_Puesto_1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Salir))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tbtn_Puesto_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtn_Puesto_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tbtn_Puesto_11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tbtn_Puesto_12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tbtn_Puesto_13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tbtn_Puesto_14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tbtn_Puesto_15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -393,7 +663,7 @@ public class Disponibilidad extends javax.swing.JFrame {
 
     private void tbtn_Puesto_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_12ActionPerformed
         puesto = 12;
-        if (tbtn_Puesto_11.isSelected()) {
+        if (tbtn_Puesto_12.isSelected()) {
             ObtenerMatricula();
         }
         EntradaSalida es = new EntradaSalida();
@@ -433,6 +703,141 @@ public class Disponibilidad extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_SalirActionPerformed
 
+    private void tbtn_Puesto_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_16ActionPerformed
+        puesto = 16;
+        if (tbtn_Puesto_16.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_16ActionPerformed
+
+    private void tbtn_Puesto_17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_17ActionPerformed
+        puesto = 17;
+        if (tbtn_Puesto_17.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_17ActionPerformed
+
+    private void tbtn_Puesto_18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_18ActionPerformed
+        puesto = 18;
+        if (tbtn_Puesto_18.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_18ActionPerformed
+
+    private void tbtn_Puesto_19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_19ActionPerformed
+        puesto = 19;
+        if (tbtn_Puesto_19.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_19ActionPerformed
+
+    private void tbtn_Puesto_20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_20ActionPerformed
+        puesto = 20;
+        if (tbtn_Puesto_20.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_20ActionPerformed
+
+    private void tbtn_Puesto_21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_21ActionPerformed
+        puesto = 21;
+        if (tbtn_Puesto_21.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_21ActionPerformed
+
+    private void tbtn_Puesto_22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_22ActionPerformed
+        puesto = 22;
+        if (tbtn_Puesto_22.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_22ActionPerformed
+
+    private void tbtn_Puesto_23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_23ActionPerformed
+        puesto = 23;
+        if (tbtn_Puesto_23.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_23ActionPerformed
+
+    private void tbtn_Puesto_24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_24ActionPerformed
+        puesto = 24;
+        if (tbtn_Puesto_24.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_24ActionPerformed
+
+    private void tbtn_Puesto_25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_25ActionPerformed
+        puesto = 25;
+        if (tbtn_Puesto_25.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_25ActionPerformed
+
+    private void tbtn_Puesto_26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_26ActionPerformed
+        puesto = 26;
+        if (tbtn_Puesto_26.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_26ActionPerformed
+
+    private void tbtn_Puesto_27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_27ActionPerformed
+        puesto = 27;
+        if (tbtn_Puesto_27.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_27ActionPerformed
+
+    private void tbtn_Puesto_28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_28ActionPerformed
+        puesto = 28;
+        if (tbtn_Puesto_28.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_28ActionPerformed
+
+    private void tbtn_Puesto_29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_29ActionPerformed
+        puesto = 29;
+        if (tbtn_Puesto_29.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_29ActionPerformed
+
+    private void tbtn_Puesto_30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_Puesto_30ActionPerformed
+        puesto = 30;
+        if (tbtn_Puesto_30.isSelected()) {
+            ObtenerMatricula();
+        }
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_tbtn_Puesto_30ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -470,6 +875,7 @@ public class Disponibilidad extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Salir;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JToggleButton tbtn_Puesto_1;
     private javax.swing.JToggleButton tbtn_Puesto_10;
     private javax.swing.JToggleButton tbtn_Puesto_11;
@@ -477,8 +883,23 @@ public class Disponibilidad extends javax.swing.JFrame {
     private javax.swing.JToggleButton tbtn_Puesto_13;
     private javax.swing.JToggleButton tbtn_Puesto_14;
     private javax.swing.JToggleButton tbtn_Puesto_15;
+    private javax.swing.JToggleButton tbtn_Puesto_16;
+    private javax.swing.JToggleButton tbtn_Puesto_17;
+    private javax.swing.JToggleButton tbtn_Puesto_18;
+    private javax.swing.JToggleButton tbtn_Puesto_19;
     private javax.swing.JToggleButton tbtn_Puesto_2;
+    private javax.swing.JToggleButton tbtn_Puesto_20;
+    private javax.swing.JToggleButton tbtn_Puesto_21;
+    private javax.swing.JToggleButton tbtn_Puesto_22;
+    private javax.swing.JToggleButton tbtn_Puesto_23;
+    private javax.swing.JToggleButton tbtn_Puesto_24;
+    private javax.swing.JToggleButton tbtn_Puesto_25;
+    private javax.swing.JToggleButton tbtn_Puesto_26;
+    private javax.swing.JToggleButton tbtn_Puesto_27;
+    private javax.swing.JToggleButton tbtn_Puesto_28;
+    private javax.swing.JToggleButton tbtn_Puesto_29;
     private javax.swing.JToggleButton tbtn_Puesto_3;
+    private javax.swing.JToggleButton tbtn_Puesto_30;
     private javax.swing.JToggleButton tbtn_Puesto_4;
     private javax.swing.JToggleButton tbtn_Puesto_5;
     private javax.swing.JToggleButton tbtn_Puesto_6;

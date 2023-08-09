@@ -20,7 +20,7 @@ public class Conec {
 
     Connection co;
 
-   private String url = "jdbc:mysql://localhost:3306/sistema_parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL";
+    private String url = "jdbc:mysql://localhost:3306/sistema_parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String usuario = "root";
     private String clave = "2002";
 //    private String url = "jdbc:mysql://localhost:3306/sistema_parqueadero?zeroDateTimeBehavior=CONVERT_TO_NULL";
@@ -85,10 +85,4 @@ public class Conec {
             
         } 
     }
-
-    void EjecutaUpdate(String sql2) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-
 }
