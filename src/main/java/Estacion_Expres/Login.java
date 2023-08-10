@@ -25,6 +25,8 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -38,14 +40,17 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblLog = new javax.swing.JLabel();
+        lblTexIni = new javax.swing.JLabel();
         txtPass = new javax.swing.JPasswordField();
         lblCon = new javax.swing.JLabel();
         btnIni = new javax.swing.JButton();
         chbxMostrar = new javax.swing.JCheckBox();
+        lblMoto = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,13 +58,13 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\MSI-THIN\\Downloads\\bloqueo-de-nube.png")); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 80, 90));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\MSI-THIN\\OneDrive\\Imágenes\\Capturas de pantalla\\Captura de pantalla 2023-08-08 100959.png")); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 470, 540));
+        lblLog.setIcon(new javax.swing.ImageIcon("C:\\Users\\MSI-THIN\\OneDrive\\Imágenes\\Capturas de pantalla\\Captura de pantalla 2023-08-08 100959.png")); // NOI18N
+        jPanel1.add(lblLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 470, 540));
 
-        jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(87, 87, 87));
-        jLabel1.setText("ESTACION EXPRES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
+        lblTexIni.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
+        lblTexIni.setForeground(new java.awt.Color(87, 87, 87));
+        lblTexIni.setText("ESTACION EXPRES");
+        jPanel1.add(lblTexIni, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
 
         txtPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +96,17 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(chbxMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
+        lblMoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\MSI-THIN\\Downloads\\scooter_motorbike_motorcycle_icon_227541 (1).png")); // NOI18N
+        jPanel1.add(lblMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 80, 70));
+
+        jButton1.setText("SALIR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,9 +115,7 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
         );
 
         pack();
@@ -141,6 +155,7 @@ public class Login extends javax.swing.JFrame {
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+                
     }//GEN-LAST:event_btnIniActionPerformed
 
     private void chbxMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbxMostrarActionPerformed
@@ -154,6 +169,11 @@ public class Login extends javax.swing.JFrame {
     private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPassActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,11 +213,13 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIni;
     private javax.swing.JCheckBox chbxMostrar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCon;
+    private javax.swing.JLabel lblLog;
+    private javax.swing.JLabel lblMoto;
+    private javax.swing.JLabel lblTexIni;
     private javax.swing.JPasswordField txtPass;
     // End of variables declaration//GEN-END:variables
 }
